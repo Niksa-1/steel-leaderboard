@@ -405,5 +405,201 @@
         "sourceUrl": "https://github.com/SWE-agent/mini-swe-agent",
         "notesShort": "Open-source 100-line agent; score is with latest frontier model backbone — varies by model used."
     }
+  ],
+
+
+  "osworld": [
+    {
+        "rank": 1,
+        "systemName": "OSAgent",
+        "organization": "TheAGI Company",
+        "scoreDisplay": "76.26%",
+        "scoreValue": 76.26,
+        "sourceUrl": "https://www.theagi.company/blog/osworld",
+        "notesShort": "Self-reported October 2025; trained with RL on OSWorld VMs and internal browser environments.",
+        "isNew": true
+    },
+    {
+        "rank": 2,
+        "systemName": "GPT-5.4",
+        "organization": "OpenAI",
+        "scoreDisplay": "75.0%",
+        "scoreValue": 75.0,
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-4/",
+        "notesShort": "Self-reported at GPT-5.4 launch on OSWorld-Verified; awaiting independent verification.",
+        "isNew": true
+    },
+    {
+        "rank": 3,
+        "systemName": "Claude Opus 4.6",
+        "organization": "Anthropic",
+        "scoreDisplay": "72.7%",
+        "scoreValue": 72.7,
+        "sourceUrl": "https://www.anthropic.com/",
+        "notesShort": "Independently assessed result; leads all verified OSWorld submissions.",
+        "isNew": true
+    },
+    {
+        "rank": 4,
+        "systemName": "Claude Sonnet 4.6",
+        "organization": "Anthropic",
+        "scoreDisplay": "72.5%",
+        "scoreValue": 72.5,
+        "sourceUrl": "https://www.anthropic.com/",
+        "notesShort": "Independently assessed; within 0.2 points of Opus 4.6 at significantly lower cost.",
+        "isNew": true
+    },
+    {
+        "rank": 5,
+        "systemName": "Qwen3 VL 235B",
+        "organization": "Alibaba",
+        "scoreDisplay": "66.7%",
+        "scoreValue": 66.7,
+        "sourceUrl": "https://huggingface.co/Qwen/Qwen3-VL-235B-A22B",
+        "notesShort": "Strongest open-source model on OSWorld; self-reported.",
+        "isNew": true
+    },
+    {
+        "rank": 6,
+        "systemName": "Kimi K2.5",
+        "organization": "Moonshot AI",
+        "scoreDisplay": "63.3%",
+        "scoreValue": 63.3,
+        "sourceUrl": "https://arxiv.org/html/2602.02276v1",
+        "notesShort": "Self-reported in technical paper; GUI-only actions without external tools on OSWorld-Verified."
+    },
+    {
+        "rank": 7,
+        "systemName": "UiPath Screen Agent",
+        "organization": "UiPath",
+        "scoreDisplay": "53.6%",
+        "scoreValue": 53.6,
+        "sourceUrl": "https://www.uipath.com/newsroom/uipath-screenagent-osworld-benchmark-top-ranking",
+        "notesShort": "OSWorld-Verified independently verified result; enterprise automation scaffold on Claude Opus 4.5."
+    },
+    {
+        "rank": 8,
+        "systemName": "Agent S2 + Claude 3.7",
+        "organization": "Simular AI",
+        "scoreDisplay": "34.5%",
+        "scoreValue": 34.5,
+        "sourceUrl": "https://simular.ai",
+        "notesShort": "Open-source modular agent; evaluated on 50-step OSWorld tasks."
+    },
+    {
+        "rank": 9,
+        "systemName": "OpenAI Operator (CUA)",
+        "organization": "OpenAI",
+        "scoreDisplay": "32.6%",
+        "scoreValue": 32.6,
+        "sourceUrl": "https://openai.com/index/computer-using-agent/",
+        "notesShort": "Self-reported on 50-step OSWorld tasks at Operator launch."
+    },
+    {
+        "rank": 10,
+        "systemName": "Claude Computer Use (3.5 Sonnet)",
+        "organization": "Anthropic",
+        "scoreDisplay": "22.0%",
+        "scoreValue": 22.0,
+        "sourceUrl": "https://www.anthropic.com/news/3-5-models-and-computer-use",
+        "notesShort": "Original computer use launch result; baseline row showing benchmark progress since late 2024."
+    }
+],
+
+
+"gaia": [
+    {
+        "rank": 1,
+        "systemName": "OPS-Agentic-Search",
+        "organization": "Alibaba Cloud",
+        "scoreDisplay": "92.36%",
+        "scoreValue": 92.36,
+        "sourceUrl": "https://gaia-benchmark-leaderboard.hf.space/",
+        "notesShort": "Official GAIA leaderboard submission; multi-model ensemble using Qwen, Claude 4.6, GPT-5, DeepSeek 3.2.",
+        "isNew": true
+    },
+    {
+        "rank": 2,
+        "systemName": "openJiuwen-deepagent",
+        "organization": "openJiuwen",
+        "scoreDisplay": "91.69%",
+        "scoreValue": 91.69,
+        "sourceUrl": "https://gitcode.com/openJiuwen/agent-store/tree/main/community/deepagent",
+        "notesShort": "Official GAIA leaderboard; GPT-5 and Gemini 3 Pro backbone.",
+        "isNew": true
+    },
+    {
+        "rank": 3,
+        "systemName": "Lemon Agent",
+        "organization": "Lenovo CTO Org",
+        "scoreDisplay": "91.36%",
+        "scoreValue": 91.36,
+        "sourceUrl": "https://github.com/Open-Lemon/LemonAgent",
+        "notesShort": "Official GAIA leaderboard; open-source agent using GPT-5, Gemini 3 Pro, and o3.",
+        "isNew": true
+    },
+    {
+        "rank": 4,
+        "systemName": "JoinAI V2.2",
+        "organization": "JoinAI-CMCC",
+        "scoreDisplay": "90.7%",
+        "scoreValue": 90.7,
+        "sourceUrl": "https://gaia-benchmark-leaderboard.hf.space/",
+        "notesShort": "Official GAIA leaderboard; multi-model ensemble with GPT-5, Gemini 3 Pro, DeepSeek 3.1, Qwen 3."
+    },
+    {
+        "rank": 5,
+        "systemName": "Nemotron-ToolOrchestra",
+        "organization": "NVIDIA",
+        "scoreDisplay": "90.37%",
+        "scoreValue": 90.37,
+        "sourceUrl": "https://research.nvidia.com/labs/lpr/ToolOrchestra/",
+        "notesShort": "Official GAIA leaderboard; open-source orchestrator model routing tasks to specialized tools."
+    },
+    {
+        "rank": 6,
+        "systemName": "SU Zero (Shuqian Pro)",
+        "organization": "Shuqian Tech",
+        "scoreDisplay": "90.03%",
+        "scoreValue": 90.03,
+        "sourceUrl": "https://gaia-benchmark-leaderboard.hf.space/",
+        "notesShort": "Official GAIA leaderboard submission."
+    },
+    {
+        "rank": 7,
+        "systemName": "HALO V1217-1",
+        "organization": "Microsoft AI Asia",
+        "scoreDisplay": "89.37%",
+        "scoreValue": 89.37,
+        "sourceUrl": "https://gaia-benchmark-leaderboard.hf.space/",
+        "notesShort": "Official GAIA leaderboard submission from Microsoft AI Asia."
+    },
+    {
+        "rank": 8,
+        "systemName": "Deep Research (o3)",
+        "organization": "OpenAI",
+        "scoreDisplay": "~87%",
+        "scoreValue": 87.0,
+        "sourceUrl": "https://openai.com/index/introducing-deep-research/",
+        "notesShort": "Self-reported at Deep Research launch; reached new SOTA on GAIA at time of release."
+    },
+    {
+        "rank": 9,
+        "systemName": "Manus",
+        "organization": "Monica AI",
+        "scoreDisplay": "86.5%",
+        "scoreValue": 86.5,
+        "sourceUrl": "https://manus.im/",
+        "notesShort": "Self-reported; multi-agent system with parallel tool use across browser, code, and file tools."
+    },
+    {
+        "rank": 10,
+        "systemName": "GPT-4o (Deep Research)",
+        "organization": "OpenAI",
+        "scoreDisplay": "72.0%",
+        "scoreValue": 72.0,
+        "sourceUrl": "https://openai.com/index/introducing-deep-research/",
+        "notesShort": "Baseline row from Deep Research launch post; earlier generation model for reference."
+    }
   ]
 }

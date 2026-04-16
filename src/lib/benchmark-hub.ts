@@ -184,6 +184,63 @@ export const benchmarkPages: BenchmarkPageData[] = [
     },
     results: benchmarkResults["swe-bench-verified"]
   },
+  {
+    meta: {
+      slug: "osworld",
+      name: "OSWorld",
+      category: "computer_use",
+      scope: "agent",
+      about: [
+        "OSWorld evaluates computer-use agents across 369 real desktop tasks spanning Ubuntu, Windows, and macOS — covering web apps, desktop software, file I/O, and multi-application workflows.",
+        "It is the most widely adopted computer-use benchmark for comparing end-to-end system performance in realistic GUI environments with execution-based evaluation.",
+        "Rankings reflect full agent stacks. Model choice, GUI grounding approach, planning strategy, and error-recovery design all contribute meaningfully to observed scores.",
+      ],
+      methodology: [
+        "Evaluation is execution-based: each task has a deterministic verifier that checks whether the final computer state matches the expected outcome.",
+        "OSWorld-Verified is a stricter variant where the research team independently runs agent code; self-reported rows on the main leaderboard are unaudited.",
+        "The human baseline is ~72.4%, making it a useful calibration point when reading scores.",
+      ],
+      importantNotes: [
+        "Self-reported and independently verified rows coexist — check the source before comparing directly.",
+      ],
+      links: [
+        { label: "OSWorld paper", url: "https://arxiv.org/abs/2404.07972" },
+        { label: "OSWorld-Verified announcement", url: "https://xlang.ai/blog/osworld-verified" },
+      ],
+      relatedBenchmarks: ["webvoyager", "webarena"],
+      featuredOnHome: true,
+      lastUpdated: "2026-04-16",
+    },
+    results: benchmarkResults["osworld"],
+  },
+  {
+    meta: {
+      slug: "gaia",
+      name: "GAIA",
+      category: "model_eval",
+      scope: "agent",
+      about: [
+        "GAIA (General AI Assistants) evaluates agents on over 450 real-world questions with unambiguous, verifiable answers — requiring multi-step reasoning, tool use, web search, and file handling across three difficulty levels.",
+        "It is the most competitive public general-agent benchmark, with top systems now exceeding 90% and the official leaderboard hosted on Hugging Face.",
+        "Because top systems are large multi-model ensembles rather than a single model, scores reflect system design and orchestration quality as much as any individual model capability.",
+      ],
+      methodology: [
+        "Scoring uses quasi-exact match against ground truth answers — no partial credit, no LLM judge.",
+        "Submissions are evaluated on the private test set; the official leaderboard on Hugging Face is the canonical source.",
+        "Level 1 tasks require minimal tooling; Level 3 tasks demand complex multi-step agent behavior. Average scores blend all three levels.",
+      ],
+      importantNotes: [
+        "Top entries are multi-model ensembles — scores cannot be attributed to any single model.",
+      ],
+      links: [
+        { label: "GAIA paper", url: "https://arxiv.org/abs/2311.12983" },
+      ],
+      relatedBenchmarks: ["browsecomp", "webarena"],
+      featuredOnHome: true,
+      lastUpdated: "2026-04-16",
+    },
+    results: benchmarkResults["gaia"],
+  },
 ];
 
 export const benchmarkPageBySlug: Record<string, BenchmarkPageData> = Object.fromEntries(
