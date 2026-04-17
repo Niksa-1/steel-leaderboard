@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getAllBenchmarkPages } from "../lib/benchmark-hub";
+
+const pages = getAllBenchmarkPages();
+---
+
+<Layout
+  title="404 — Page Not Found | Steel.dev Leaderboard"
+  description="This page doesn't exist. Browse AI agent benchmark leaderboards on Steel.dev."
+>
+  <section class="section-frame w-full p-5 md:p-6">
+    <p class="m-0 text-xs uppercase tracking-[0.04em] muted">404</p>
+    <h1 class="mb-3 mt-2 text-2xl font-semibold text-[var(--color-text-strong)] md:text-4xl">
+      Page not found
+    </h1>
+    <p class="m-0 max-w-3xl">
+      This URL doesn't match any benchmark or page in the hub.
+      <br>
+      It may have moved or never existed.
+    </p>
+    <p class="mt-4">
+      <a href="/">Back to benchmark hub</a>
+    </p>
+  </section>
+
+  <section class="section-frame mt-8 w-full p-5 md:p-6">
+    <h2 class="m-0 text-base font-semibold text-[var(--color-text-strong)]">Available leaderboards</h2>
+    <p class="mb-0 mt-2 text-sm muted">Jump directly to a benchmark page:</p>
+    <div class="mt-3 flex flex-wrap gap-2">
+      {pages.map((page) => (
+        <a class="badge no-underline" href={`/leaderboards/${page.meta.slug}/`}>
+          {page.meta.name}
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>
