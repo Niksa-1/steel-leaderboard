@@ -52,3 +52,42 @@ const { rows, scope, heading = "Leaderboard" } = Astro.props;
     </table>
   </div>
 </section>
+<div class="flex justify-end mb-2">
+    <button
+      class="copy-md-btn badge cursor-pointer select-none"
+      data-rows={JSON.stringify(rows)}
+      data-heading={heading}>
+      copy as markdown
+    </button>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>(".copy-md-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const rows = JSON.parse(btn.dataset.rows ?? "[]") as {
+        rank: number;
+        systemName: string;
+        organization: string;
+        scoreDisplay: string;
+        notesShort: string;
+        sourceUrl: string;
+      }[];
+      const heading = btn.dataset.heading ?? "Leaderboard";
+
+      const header = `| Rank | System | Organization | Score | Notes |`;
+      const divider = `| --- | --- | --- | --- | --- |`;
+      const rowLines = rows.map(
+        (r) =>
+          `| #${r.rank} | [${r.systemName}](${r.sourceUrl}) | ${r.organization} | ${r.scoreDisplay} | ${r.notesShort} |`
+      );
+
+      const md = [`## ${heading}`, ``, header, divider, ...rowLines].join("\n");
+
+      navigator.clipboard.writeText(md).then(() => {
+        const original = btn.textContent;
+        btn.textContent = "copied!";
+        setTimeout(() => (btn.textContent = original), 1800);
+      });
+    });
+  });
+</script>
