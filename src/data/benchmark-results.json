@@ -601,5 +601,181 @@
         "sourceUrl": "https://openai.com/index/introducing-deep-research/",
         "notesShort": "Baseline row from Deep Research launch post; earlier generation model for reference."
     }
+  ],
+
+
+"tau-bench": [
+    {
+        "rank": 1,
+        "systemName": "Claude Opus 4.5",
+        "organization": "Anthropic",
+        "scoreDisplay": "70.2%",
+        "scoreValue": 70.2,
+        "sourceUrl": "https://taubench.com",
+        "notesShort": "Evaluated by Sierra Research with High user simulator and GPT-5.2 judge.",
+        "isNew": true
+    },
+    {
+        "rank": 2,
+        "systemName": "GPT-5.2",
+        "organization": "OpenAI",
+        "scoreDisplay": "69.9%",
+        "scoreValue": 69.9,
+        "sourceUrl": "https://taubench.com",
+        "notesShort": "Evaluated by Sierra Research with High user simulator and GPT-5.2 judge."
+    },
+    {
+        "rank": 3,
+        "systemName": "Qwen3.5-397B-A17B",
+        "organization": "Alibaba",
+        "scoreDisplay": "68.4%",
+        "scoreValue": 68.4,
+        "sourceUrl": "https://taubench.com",
+        "notesShort": "Evaluated by Sierra Research with Enabled user simulator and GPT-5.2 judge."
+    },
+    {
+        "rank": 4,
+        "systemName": "Gemini 3 Flash",
+        "organization": "Google DeepMind",
+        "scoreDisplay": "67.8%",
+        "scoreValue": 67.8,
+        "sourceUrl": "https://taubench.com",
+        "notesShort": "Evaluated by Sierra Research with High user simulator and GPT-5.2 judge."
+    },
+    {
+        "rank": 5,
+        "systemName": "Gemini 3 Pro",
+        "organization": "Google DeepMind",
+        "scoreDisplay": "65.8%",
+        "scoreValue": 65.8,
+        "sourceUrl": "https://taubench.com",
+        "notesShort": "Evaluated by Sierra Research with High user simulator and GPT-5.2 judge."
+    },
+    {
+        "rank": 6,
+        "systemName": "GLM-5",
+        "organization": "Z.AI",
+        "scoreDisplay": "63.2%",
+        "scoreValue": 63.2,
+        "sourceUrl": "https://taubench.com",
+        "notesShort": "Evaluated by Sierra Research with Enabled user simulator and GPT-5.2 judge."
+    },
+    {
+        "rank": 7,
+        "systemName": "Claude Sonnet 4.5",
+        "organization": "Anthropic",
+        "scoreDisplay": "62.9%",
+        "scoreValue": 62.9,
+        "sourceUrl": "https://taubench.com",
+        "notesShort": "Evaluated by Sierra Research with Enabled user simulator and GPT-5.2 judge."
+    },
+    {
+        "rank": 8,
+        "systemName": "GPT-5.2",
+        "organization": "OpenAI",
+        "scoreDisplay": "55.5%",
+        "scoreValue": 55.5,
+        "sourceUrl": "https://taubench.com",
+        "notesShort": "Evaluated by Sierra Research with None user simulator and GPT-5.2 judge. Lower score reflects no user simulation assistance."
+    }
+  ],
+
+
+"agent-bench": [
+    {
+        "rank": 1,
+        "systemName": "AgentRL w/ Qwen2.5-32B-Instruct",
+        "organization": "Tsinghua University",
+        "scoreDisplay": "70.4%",
+        "scoreValue": 70.4,
+        "sourceUrl": "https://arxiv.org/abs/2510.04206",
+        "notesShort": "RL-trained on AgentBench FC environments; outperforms GPT-5 and Claude Sonnet 4 per paper.",
+        "isNew": true
+    },
+    {
+        "rank": 2,
+        "systemName": "AgentRL w/ Qwen2.5-14B-Instruct",
+        "organization": "Tsinghua University",
+        "scoreDisplay": "67.7%",
+        "scoreValue": 67.7,
+        "sourceUrl": "https://arxiv.org/abs/2510.04206",
+        "notesShort": "RL-trained 14B model; evaluated on ALFWorld, DB, KG, OS, and Webshop environments.",
+        "isNew": true
+    },
+    {
+        "rank": 3,
+        "systemName": "AgentRL w/ GLM-4-9B-0414",
+        "organization": "Tsinghua University",
+        "scoreDisplay": "65.0%",
+        "scoreValue": 65.0,
+        "sourceUrl": "https://arxiv.org/abs/2510.04206",
+        "notesShort": "RL-trained on GLM-4-9B backbone; demonstrates cross-architecture generalization of AgentRL.",
+        "isNew": true
+    },
+    {
+        "rank": 4,
+        "systemName": "AgentRL w/ Qwen2.5-7B-Instruct",
+        "organization": "Tsinghua University",
+        "scoreDisplay": "62.0%",
+        "scoreValue": 62.0,
+        "sourceUrl": "https://arxiv.org/abs/2510.04206",
+        "notesShort": "RL-trained 7B model; competitive with much larger commercial models on AgentBench FC.",
+        "isNew": true
+    },
+    {
+        "rank": 5,
+        "systemName": "AgentRL w/ Qwen2.5-3B-Instruct",
+        "organization": "Tsinghua University",
+        "scoreDisplay": "60.0%",
+        "scoreValue": 60.0,
+        "sourceUrl": "https://arxiv.org/abs/2510.04206",
+        "notesShort": "Smallest AgentRL model; shows RL training benefit extends to 3B parameter scale.",
+        "isNew": true
+    },
+    {
+        "rank": 6,
+        "systemName": "Claude Sonnet 4.5",
+        "organization": "Anthropic",
+        "scoreDisplay": "58.9%",
+        "scoreValue": 58.9,
+        "sourceUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRR3Wl7wsCgHpwUw1_eUXW_fptAPLL3FkhnW_rua0O1Ji_GIVrpTjY5LaKAhwO-WeARjnY_KNw0SYNJ/pubhtml",
+        "notesShort": "Community leaderboard submission; evaluated on AgentBench FC function-calling task suite."
+    },
+    {
+        "rank": 7,
+        "systemName": "Claude Sonnet 4.5 Thinking",
+        "organization": "Anthropic",
+        "scoreDisplay": "58.3%",
+        "scoreValue": 58.3,
+        "sourceUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRR3Wl7wsCgHpwUw1_eUXW_fptAPLL3FkhnW_rua0O1Ji_GIVrpTjY5LaKAhwO-WeARjnY_KNw0SYNJ/pubhtml",
+        "notesShort": "Extended thinking variant; marginal drop vs base Sonnet 4.5 on FC tasks."
+    },
+    {
+        "rank": 8,
+        "systemName": "Claude Sonnet 4 Thinking",
+        "organization": "Anthropic",
+        "scoreDisplay": "58.2%",
+        "scoreValue": 58.2,
+        "sourceUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRR3Wl7wsCgHpwUw1_eUXW_fptAPLL3FkhnW_rua0O1Ji_GIVrpTjY5LaKAhwO-WeARjnY_KNw0SYNJ/pubhtml",
+        "notesShort": "Community leaderboard submission; evaluated on AgentBench FC function-calling task suite."
+    },
+    {
+        "rank": 9,
+        "systemName": "Claude Sonnet 4",
+        "organization": "Anthropic",
+        "scoreDisplay": "57.4%",
+        "scoreValue": 57.4,
+        "sourceUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRR3Wl7wsCgHpwUw1_eUXW_fptAPLL3FkhnW_rua0O1Ji_GIVrpTjY5LaKAhwO-WeARjnY_KNw0SYNJ/pubhtml",
+        "notesShort": "Community leaderboard submission; evaluated on AgentBench FC function-calling task suite."
+    },
+    {
+        "rank": 10,
+        "systemName": "Claude Sonnet 3.7",
+        "organization": "Anthropic",
+        "scoreDisplay": "53.2%",
+        "scoreValue": 53.2,
+        "sourceUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRR3Wl7wsCgHpwUw1_eUXW_fptAPLL3FkhnW_rua0O1Ji_GIVrpTjY5LaKAhwO-WeARjnY_KNw0SYNJ/pubhtml",
+        "notesShort": "Community leaderboard submission; earlier Anthropic generation included for progress reference."
+    }
   ]
 }

@@ -241,6 +241,65 @@ export const benchmarkPages: BenchmarkPageData[] = [
     },
     results: benchmarkResults["gaia"],
   },
+  {
+    meta: {
+      slug: "tau-bench",
+      name: "τ-bench",
+      category: "model_eval",
+      scope: "model",
+      about: [
+        "τ-bench (TAU-bench) evaluates AI agents in realistic enterprise tool-use scenarios across retail and airline domains — testing multi-turn conversation, policy adherence, database interactions, and rule-following consistency over many trials.",
+        "It is one of the most widely adopted agentic benchmarks by AI labs, cited in model cards from Anthropic, OpenAI, and Google. Unlike static QA benchmarks, τ-bench measures whether an agent behaves reliably and correctly across multiple independent runs using the pass^k metric.",
+        "Because evaluation setup (prompt, tool schema, trial count) varies by submitter, self-reported scores across organizations are not always directly comparable — the Notes column captures key setup differences.",
+      ],
+      methodology: [
+        "The pass^k metric measures the probability an agent succeeds on all k independent trials of the same task — penalizing inconsistency even when average accuracy is high.",
+        "Evaluation uses a simulated user (another LLM) and checks final database state against the annotated goal state — no LLM judge for pass/fail decisions.",
+        "The official leaderboard is hosted at taubench.com and maintained by Sierra Research. Some rows are self-reported in model cards; verify source before comparing across organizations.",
+      ],
+      importantNotes: [
+        "Score comparisons across organizations require caution — prompt setup, tool schema, and trial count differ between submissions.",
+      ],
+      links: [
+        { label: "τ-bench paper", url: "https://arxiv.org/abs/2406.12045" },
+        { label: "Sierra Research blog", url: "https://sierra.ai/blog/tau-bench-shaping-development-evaluation-agents" },
+      ],
+      relatedBenchmarks: ["swe-bench-verified", "gaia"],
+      featuredOnHome: false,
+      lastUpdated: "2026-04-16",
+    },
+    results: benchmarkResults["tau-bench"],
+  },
+  {
+    meta: {
+      slug: "agentbench",
+      name: "AgentBench",
+      category: "model_eval",
+      scope: "model",
+      about: [
+        "AgentBench evaluates LLMs as agents across 8 distinct interactive environments — including OS interaction, database querying, knowledge graph traversal, digital card games, lateral thinking puzzles, house-holding tasks, web browsing, and web shopping.",
+        "Published at ICLR 2024 and developed by Tsinghua University, AgentBench was one of the first benchmarks to systematically expose the performance gap between top commercial LLMs and open-source competitors on real agentic tasks requiring multi-turn reasoning and decision-making.",
+        "The FC (Function Calling) variant of the leaderboard focuses specifically on structured tool use and function-calling ability — the most relevant dimension for teams building tool-augmented pipelines.",
+      ],
+      methodology: [
+        "Each environment has its own task set and automated evaluator. Scores reflect an overall average across environments unless a specific environment subset is specified.",
+        "The FC leaderboard tracks function-calling performance specifically — models are evaluated on structured tool invocation accuracy rather than free-form action generation.",
+        "Results are community-submitted via the public Google Sheets tracker; rows are not independently verified by the authors unless explicitly noted.",
+      ],
+      importantNotes: [
+        "Community-submitted leaderboard — rows are self-reported and not independently verified. Check source links before drawing strong conclusions.",
+      ],
+      links: [
+        { label: "AgentBench paper (ICLR 2024)", url: "https://arxiv.org/abs/2308.03688" },
+        { label: "GitHub repository", url: "https://github.com/THUDM/AgentBench" },
+        { label: "FC leaderboard", url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRR3Wl7wsCgHpwUw1_eUXW_fptAPLL3FkhnW_rua0O1Ji_GIVrpTjY5LaKAhwO-WeARjnY_KNw0SYNJ/pubhtml" },
+      ],
+      relatedBenchmarks: ["tau-bench", "gaia", "swe-bench-verified"],
+      featuredOnHome: false,
+      lastUpdated: "2026-04-16",
+    },
+    results: benchmarkResults["agent-bench"],
+  }
 ];
 
 export const benchmarkPageBySlug: Record<string, BenchmarkPageData> = Object.fromEntries(
