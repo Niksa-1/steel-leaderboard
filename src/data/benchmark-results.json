@@ -777,5 +777,183 @@
         "sourceUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRR3Wl7wsCgHpwUw1_eUXW_fptAPLL3FkhnW_rua0O1Ji_GIVrpTjY5LaKAhwO-WeARjnY_KNw0SYNJ/pubhtml",
         "notesShort": "Community leaderboard submission; earlier Anthropic generation included for progress reference."
     }
+  ],
+
+
+  "clawbench": [
+    {
+        "rank": 1,
+        "systemName": "Claude Sonnet 4.6",
+        "organization": "Anthropic",
+        "scoreDisplay": "33.3%",
+        "scoreValue": 33.3,
+        "sourceUrl": "https://arxiv.org/abs/2604.08523",
+        "notesShort": "Native multi-modal reasoning with high success in Finance and Academic tasks.",
+        "isNew": true
+    },
+    {
+        "rank": 2,
+        "systemName": "GLM-5",
+        "organization": "Zhipu AI",
+        "scoreDisplay": "24.2%",
+        "scoreValue": 24.2,
+        "sourceUrl": "https://arxiv.org/abs/2604.08523",
+        "notesShort": "Strongest text-only baseline; high performance in Developer-centric workflows.",
+        "isNew": true
+    },
+    {
+        "rank": 3,
+        "systemName": "Gemini 3 Flash",
+        "organization": "Google",
+        "scoreDisplay": "19.0%",
+        "scoreValue": 19.0,
+        "sourceUrl": "https://arxiv.org/abs/2604.08523",
+        "notesShort": "Efficiency-optimized vision model with consistent performance in Travel categories.",
+        "isNew": true
+    },
+    {
+        "rank": 4,
+        "systemName": "Claude Haiku 4.5",
+        "organization": "Anthropic",
+        "scoreDisplay": "18.3%",
+        "scoreValue": 18.3,
+        "sourceUrl": "https://arxiv.org/abs/2604.08523",
+        "notesShort": "Balanced agentic loop demonstrating strong reasoning in Academic task groups.",
+        "isNew": true
+    },
+    {
+        "rank": 5,
+        "systemName": "GPT-5.4",
+        "organization": "OpenAI",
+        "scoreDisplay": "6.5%",
+        "scoreValue": 6.5,
+        "sourceUrl": "https://arxiv.org/abs/2604.08523",
+        "notesShort": "Large-scale reasoning model baseline; highlights difficulty of live-web transactions.",
+        "isNew": true
+    },
+    {
+        "rank": 6,
+        "systemName": "Gemini 3.1 Flash Lite",
+        "organization": "Google",
+        "scoreDisplay": "3.3%",
+        "scoreValue": 3.3,
+        "sourceUrl": "https://arxiv.org/abs/2604.08523",
+        "notesShort": "Lightweight inference model tested on real-world multi-step website interactions.",
+        "isNew": true
+    },
+    {
+        "rank": 7,
+        "systemName": "Kimi K2.5",
+        "organization": "Moonshot AI",
+        "scoreDisplay": "0.7%",
+        "scoreValue": 0.7,
+        "sourceUrl": "https://arxiv.org/abs/2604.08523",
+        "notesShort": "Early-stage agentic baseline demonstrating challenges in state-changing operations.",
+        "isNew": true
+    }
+  ],
+
+
+  "mind2web": [
+    {
+        "rank": 1,
+        "systemName": "Browser Use Cloud (bu-max)",
+        "organization": "Browser-Use",
+        "scoreDisplay": "97.0%",
+        "scoreValue": 97.0,
+        "sourceUrl": "https://browser-use.com/posts/online-mind2web-benchmark",
+        "notesShort": "Self-reported using a custom agentic judge built on Claude Agent SDK; OpenAI's score uses a different screenshot-based judge — not directly comparable.",
+        "isNew": true
+    },
+    {
+        "rank": 2,
+        "systemName": "ABP + Claude Opus 4.6",
+        "organization": "theredsix",
+        "scoreDisplay": "90.53%",
+        "scoreValue": 90.53,
+        "sourceUrl": "https://github.com/theredsix/abp-online-mind2web-results",
+        "notesShort": "Agent Browser Protocol with Claude Opus 4.6; all 300 task results published publicly. Previous SOTA was 78.7%.",
+        "isNew": true
+    },
+    {
+        "rank": 3,
+        "systemName": "TinyFish",
+        "organization": "TinyFish AI",
+        "scoreDisplay": "90.0%",
+        "scoreValue": 90.0,
+        "sourceUrl": "https://www.tinyfish.ai/blog/mind2web",
+        "notesShort": "All 300 task runs published publicly; outperformed Gemini by 21 points and OpenAI Operator by 29 points at time of submission.",
+        "isNew": true
+    },
+    {
+        "rank": 4,
+        "systemName": "UI-TARS-2",
+        "organization": "ByteDance / VLM-Research",
+        "scoreDisplay": "88.2%",
+        "scoreValue": 88.2,
+        "sourceUrl": "https://arxiv.org/abs/2509.02544",
+        "notesShort": "Native GUI agent trained with multi-turn RL; score from technical report, evaluated under standard Online-Mind2Web conditions.",
+        "isNew": true
+    },
+    {
+        "rank": 5,
+        "systemName": "Navigator",
+        "organization": "Yutori",
+        "scoreDisplay": "78.7%",
+        "scoreValue": 78.7,
+        "sourceUrl": "https://yutori.com/blog/introducing-navigator",
+        "notesShort": "Human-evaluation score; also achieves 64.7% on auto-evaluation (WebJudge). 3.3x faster per-step than Claude 4.5.",
+        "isNew": false
+    },
+    {
+        "rank": 6,
+        "systemName": "Gemini 2.5 Computer Use",
+        "organization": "Google DeepMind",
+        "scoreDisplay": "69.0%",
+        "scoreValue": 69.0,
+        "sourceUrl": "https://yutori.com/blog/introducing-navigator",
+        "notesShort": "Score reported by Yutori under identical evaluation settings; 57.3% on auto-evaluation (WebJudge).",
+        "isNew": false
+    },
+    {
+        "rank": 7,
+        "systemName": "OpenAI Operator",
+        "organization": "OpenAI",
+        "scoreDisplay": "61.3%",
+        "scoreValue": 61.3,
+        "sourceUrl": "https://arxiv.org/abs/2504.01382",
+        "notesShort": "Score from Online-Mind2Web paper; OpenAI did not publish judge, harness, or task-level results for independent verification.",
+        "isNew": false
+    },
+    {
+        "rank": 8,
+        "systemName": "Claude 4.0",
+        "organization": "Anthropic",
+        "scoreDisplay": "61.0%",
+        "scoreValue": 61.0,
+        "sourceUrl": "https://yutori.com/blog/introducing-navigator",
+        "notesShort": "Human-evaluation score reported by Yutori; 47.7% on auto-evaluation (WebJudge).",
+        "isNew": false
+    },
+    {
+        "rank": 9,
+        "systemName": "Claude 4.5",
+        "organization": "Anthropic",
+        "scoreDisplay": "55.0%",
+        "scoreValue": 55.0,
+        "sourceUrl": "https://yutori.com/blog/introducing-navigator",
+        "notesShort": "Human-evaluation score reported by Yutori under identical evaluation settings; 59.3% on auto-evaluation (WebJudge).",
+        "isNew": false
+    },
+    {
+        "rank": 10,
+        "systemName": "HAL Leaderboard baseline (best open)",
+        "organization": "Princeton / OSU",
+        "scoreDisplay": "~30%",
+        "scoreValue": 30.0,
+        "sourceUrl": "https://hal.cs.princeton.edu/online_mind2web",
+        "notesShort": "Reference baseline from the HAL leaderboard tracker; illustrates the gap between frontier commercial systems and open models.",
+        "isNew": false
+    }
   ]
 }

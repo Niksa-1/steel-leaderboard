@@ -243,6 +243,65 @@ export const benchmarkPages: BenchmarkPageData[] = [
   },
   {
     meta: {
+      slug: "clawbench",
+      name: "ClawBench",
+      category: "browser_agents",
+      scope: "agent",
+      about: [
+        "ClawBench evaluates AI agents on 153 everyday tasks that real people need to complete regularly — booking appointments, completing purchases, submitting job applications, and filling in forms — across 144 live production websites in 15 categories.",
+        "Unlike most browser benchmarks that use offline sandboxes with static pages, ClawBench runs entirely on live websites, preserving the full complexity and dynamic nature of real-world web interaction. This makes it a particularly demanding and realistic signal for production browser agent capability.",
+        "The best of 7 frontier models evaluated at publication time (Claude Sonnet 4.6) completed only 33% of tasks, making it one of the most challenging publicly available browser agent benchmarks today.",
+      ],
+      methodology: [
+        "Tasks require agents to obtain information from user-provided documents, navigate multi-step workflows, and complete write-heavy operations like filling in detailed forms — capabilities explicitly beyond existing benchmarks.",
+        "Evaluation captures 5 layers of behavioral data: session replay, screenshots, HTTP traffic, agent reasoning traces, and browser actions. An agentic evaluator scores results with step-level traceable diagnostics.",
+        "Human ground-truth is collected for every task. The agentic evaluator provides step-level diagnostics rather than a single pass/fail, making failure analysis more actionable.",
+      ],
+      importantNotes: [
+        "Very new benchmark (April 2026) — published results cover only 7 frontier models. Expect the leaderboard to expand rapidly.",
+      ],
+      links: [
+        { label: "ClawBench paper", url: "https://arxiv.org/abs/2604.08523" },
+        { label: "Project page", url: "https://claw-bench.com" },
+        { label: "ClawBench repository", url: "https://github.com/reacher-z/ClawBench" },
+      ],
+      relatedBenchmarks: ["webvoyager", "webarena", "browsecomp"],
+      featuredOnHome: false,
+      lastUpdated: "2026-04-16",
+    },
+    results: benchmarkResults["clawbench"],
+  },
+  {
+    meta: {
+      slug: "online-mind2web",
+      name: "Online-Mind2Web",
+      category: "browser_agents",
+      scope: "agent",
+      about: [
+        "Online-Mind2Web is a live browser agent benchmark of 300 diverse, realistic tasks across 136 popular websites — spanning shopping, finance, travel, government, and more. Unlike static offline benchmarks, agents interact with real, dynamic pages as they exist at evaluation time.",
+        "Published at COLM 2025 by OSU, it was introduced specifically to expose over-optimism in previously reported web agent results. The paper's central finding was that agents scoring highly on static benchmarks performed dramatically worse on live websites — hence the title 'An Illusion of Progress?'",
+        "It has since become the most widely cited live browser benchmark, with commercial agents (Browser Use, TinyFish, Yutori Navigator, UI-TARS-2) using it as the primary competitive signal for browser agent capability.",
+      ],
+      methodology: [
+        "Tasks span three difficulty levels — easy (83), medium (143), and hard (74) — stratified by reference human step count. Performance drops sharply between levels: easy→medium sees ~30% drop, medium→hard a further ~15%.",
+        "Two evaluation methods coexist: human evaluation (gold standard, slower) and WebJudge (LLM-as-a-Judge, ~85% agreement with human judgment). Many teams report both — the Notes column specifies which applies to each row.",
+        "Because teams use different judges (WebJudge, screenshot-based, or custom agentic judges), scores are not always directly comparable across organizations. Browser Use's 97% uses a custom agentic judge built on the Claude Agent SDK, which is not the same as WebJudge.",
+      ],
+      importantNotes: [
+        "Judge methodology varies significantly across submissions — human eval, WebJudge, and custom agentic judges produce different scores for the same agent. Always check the Notes column before comparing rows.",
+      ],
+      links: [
+        { label: "Online-Mind2Web paper (COLM 2025)", url: "https://arxiv.org/abs/2504.01382" },
+        { label: "Online-Mind2Web repository", url: "https://github.com/browser-use/online-mind2web" },
+      ],
+      relatedBenchmarks: ["webvoyager", "webarena", "browsecomp"],
+      featuredOnHome: false,
+      lastUpdated: "2026-04-16",
+    },
+    results: benchmarkResults["mind2web"],
+  },
+  {
+    meta: {
       slug: "tau-bench",
       name: "τ-bench",
       category: "model_eval",
@@ -291,8 +350,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       ],
       links: [
         { label: "AgentBench paper (ICLR 2024)", url: "https://arxiv.org/abs/2308.03688" },
-        { label: "GitHub repository", url: "https://github.com/THUDM/AgentBench" },
-        { label: "FC leaderboard", url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRR3Wl7wsCgHpwUw1_eUXW_fptAPLL3FkhnW_rua0O1Ji_GIVrpTjY5LaKAhwO-WeARjnY_KNw0SYNJ/pubhtml" },
+        { label: "AgentBench repository", url: "https://github.com/THUDM/AgentBench" },
       ],
       relatedBenchmarks: ["tau-bench", "gaia", "swe-bench-verified"],
       featuredOnHome: false,
