@@ -8,12 +8,14 @@ interface Props {
   title?: string;
   description?: string;
   structuredData?: string | string[] | null;
+  ogImage?: string;
 }
 
 const {
   title = "AI Agent Leaderboard | Steel.dev",
   description = "Compare and evaluate AI agents on Steel.dev's leaderboard",
   structuredData = null,
+  ogImage = "/og/home.png",
 } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, "https://leaderboard.steel.dev");
 const structuredDataItems = Array.isArray(structuredData)
@@ -47,13 +49,13 @@ gtag("config", "G-88TGJXEHJ6");
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content={new URL(ogImage, "https://leaderboard.steel.dev")} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="/og-image.png" />
+    <meta name="twitter:image" content={new URL(ogImage, "https://leaderboard.steel.dev")} />    
     <meta name="google-site-verification" content="u255cG_eERjkv7qF9hArpEz8bdDPLQrfHD6IqCvk4jo" />
     {structuredDataItems.map((item) => (
       <script type="application/ld+json" set:html={item} />

@@ -83,6 +83,7 @@ const breadcrumbSchema = JSON.stringify({
 ---
 
 <Layout
+  ogImage={`/og/${page.meta.slug}.png`}
   title={`${page.meta.name} Leaderboard | Steel.dev`}
   description={`${page.meta.name} benchmark leaderboard with methodology notes, source-linked rows, and generated FAQ guidance.`}
   structuredData={[faqSchema, itemListSchema, breadcrumbSchema]}
