@@ -156,6 +156,76 @@
   "browsecomp": [
     {
         "rank": 1,
+        "systemName": "Mythos Preview",
+        "organization": "Anthropic",
+        "scoreDisplay": "86.9%",
+        "scoreValue": 86.9,
+        "sourceUrl": "https://www.anthropic.com/glasswing",
+        "notesShort": "Reported on Anthropic's Glasswing page.",
+        "isNew": true
+    },
+    {
+        "rank": 2,
+        "systemName": "Gemini 3.1 Pro",
+        "organization": "Google DeepMind",
+        "scoreDisplay": "85.9%",
+        "scoreValue": 85.9,
+        "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-1_pro_model_evaluation.pdf",
+        "notesShort": "Reported in Google DeepMind's Gemini 3.1 Pro model evaluation PDF.",
+        "isNew": true
+    },
+    {
+        "rank": 3,
+        "systemName": "Opus 4.6",
+        "organization": "Anthropic",
+        "scoreDisplay": "83.7%",
+        "scoreValue": 83.7,
+        "sourceUrl": "https://www.anthropic.com/glasswing",
+        "notesShort": "Reported on Anthropic's Glasswing page.",
+        "isNew": true
+    },
+    {
+        "rank": 4,
+        "systemName": "GPT-5.4",
+        "organization": "OpenAI",
+        "scoreDisplay": "82.7%",
+        "scoreValue": 82.7,
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-4/",
+        "notesShort": "Reported in OpenAI's GPT-5.4 announcement.",
+        "isNew": true
+    },
+    {
+        "rank": 5,
+        "systemName": "GLM-5.1",
+        "organization": "Z.ai",
+        "scoreDisplay": "79.3%",
+        "scoreValue": 79.3,
+        "sourceUrl": "https://z.ai/blog/glm-5.1",
+        "notesShort": "Reported on Z.ai's GLM-5.1 announcement.",
+        "isNew": true
+    },
+    {
+        "rank": 6,
+        "systemName": "GPT-5.3-Codex",
+        "organization": "OpenAI",
+        "scoreDisplay": "77.3%",
+        "scoreValue": 77.3,
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-4/",
+        "notesShort": "Reported in OpenAI's GPT-5.4 announcement.",
+        "isNew": true
+    },
+    {
+        "rank": 7,
+        "systemName": "GPT-5.2",
+        "organization": "OpenAI",
+        "scoreDisplay": "65.8%",
+        "scoreValue": 65.8,
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-4/",
+        "notesShort": "Reported in OpenAI's GPT-5.4 announcement.",
+        "isNew": true
+    },
+    {
+        "rank": 8,
         "systemName": "Kimi K2 Thinking",
         "organization": "Moonshot AI",
         "scoreDisplay": "60.2%",
@@ -164,7 +234,7 @@
         "notesShort": "Score from public leaderboard context; row type may be model-centric."
     },
     {
-        "rank": 2,
+        "rank": 9,
         "systemName": "Deep Research (o3)",
         "organization": "OpenAI",
         "scoreDisplay": "51.5%",
@@ -173,7 +243,7 @@
         "notesShort": "Reference result from OpenAI's BrowseComp paper; tool-augmented deep research agent."
     },
     {
-        "rank": 3,
+        "rank": 10,
         "systemName": "Frontier baseline A",
         "organization": "Public report",
         "scoreDisplay": "51.0%",
@@ -182,7 +252,7 @@
         "notesShort": "Placeholder ranking row for template testing and FAQ generation."
     },
     {
-        "rank": 4,
+        "rank": 11,
         "systemName": "Tool-augmented setup B",
         "organization": "Community",
         "scoreDisplay": "47.4%",
@@ -191,7 +261,7 @@
         "notesShort": "Illustrative mixed setup row; replace with verified source later."
     },
     {
-        "rank": 5,
+        "rank": 12,
         "systemName": "WebSailor-72B",
         "organization": "Academic",
         "scoreDisplay": "12.0%",
@@ -200,7 +270,7 @@
         "notesShort": "Third-party verified; open-source 72B model specialized for web navigation tasks."
     },
     {
-        "rank": 6,
+        "rank": 13,
         "systemName": "GPT-4o + browsing",
         "organization": "OpenAI",
         "scoreDisplay": "1.9%",
@@ -411,6 +481,16 @@
   "osworld": [
     {
         "rank": 1,
+        "systemName": "Mythos Preview",
+        "organization": "Anthropic",
+        "scoreDisplay": "79.6%",
+        "scoreValue": 79.6,
+        "sourceUrl": "https://www.anthropic.com/glasswing",
+        "notesShort": "Reported on Anthropic's Glasswing page.",
+        "isNew": true
+    },
+    {
+        "rank": 2,
         "systemName": "OSAgent",
         "organization": "TheAGI Company",
         "scoreDisplay": "76.26%",
@@ -420,7 +500,7 @@
         "isNew": true
     },
     {
-        "rank": 2,
+        "rank": 3,
         "systemName": "GPT-5.4",
         "organization": "OpenAI",
         "scoreDisplay": "75.0%",
@@ -430,17 +510,17 @@
         "isNew": true
     },
     {
-        "rank": 3,
+        "rank": 4,
         "systemName": "Claude Opus 4.6",
         "organization": "Anthropic",
         "scoreDisplay": "72.7%",
         "scoreValue": 72.7,
-        "sourceUrl": "https://www.anthropic.com/",
-        "notesShort": "Independently assessed result; leads all verified OSWorld submissions.",
+        "sourceUrl": "https://www.anthropic.com/glasswing",
+        "notesShort": "Reported on Anthropic's Glasswing page.",
         "isNew": true
     },
     {
-        "rank": 4,
+        "rank": 5,
         "systemName": "Claude Sonnet 4.6",
         "organization": "Anthropic",
         "scoreDisplay": "72.5%",
@@ -450,7 +530,7 @@
         "isNew": true
     },
     {
-        "rank": 5,
+        "rank": 6,
         "systemName": "Qwen3 VL 235B",
         "organization": "Alibaba",
         "scoreDisplay": "66.7%",
@@ -460,7 +540,7 @@
         "isNew": true
     },
     {
-        "rank": 6,
+        "rank": 7,
         "systemName": "Kimi K2.5",
         "organization": "Moonshot AI",
         "scoreDisplay": "63.3%",
@@ -469,7 +549,7 @@
         "notesShort": "Self-reported in technical paper; GUI-only actions without external tools on OSWorld-Verified."
     },
     {
-        "rank": 7,
+        "rank": 8,
         "systemName": "UiPath Screen Agent",
         "organization": "UiPath",
         "scoreDisplay": "53.6%",
@@ -478,7 +558,7 @@
         "notesShort": "OSWorld-Verified independently verified result; enterprise automation scaffold on Claude Opus 4.5."
     },
     {
-        "rank": 8,
+        "rank": 9,
         "systemName": "Agent S2 + Claude 3.7",
         "organization": "Simular AI",
         "scoreDisplay": "34.5%",
@@ -487,7 +567,7 @@
         "notesShort": "Open-source modular agent; evaluated on 50-step OSWorld tasks."
     },
     {
-        "rank": 9,
+        "rank": 10,
         "systemName": "OpenAI Operator (CUA)",
         "organization": "OpenAI",
         "scoreDisplay": "32.6%",
@@ -496,7 +576,7 @@
         "notesShort": "Self-reported on 50-step OSWorld tasks at Operator launch."
     },
     {
-        "rank": 10,
+        "rank": 11,
         "systemName": "Claude Computer Use (3.5 Sonnet)",
         "organization": "Anthropic",
         "scoreDisplay": "22.0%",

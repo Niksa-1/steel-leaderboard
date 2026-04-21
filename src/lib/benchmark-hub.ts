@@ -21,6 +21,7 @@ export interface BenchmarkPageMeta {
   relatedBenchmarks: string[];
   featuredOnHome: boolean;
   lastUpdated: string;
+  customFaqs?: BenchmarkFaqItem[];
 }
 
 export interface BenchmarkResultRow {
@@ -94,6 +95,32 @@ export const benchmarkPages: BenchmarkPageData[] = [
       relatedBenchmarks: ["webarena", "browsecomp", "osworld"],
       featuredOnHome: true,
       lastUpdated: "2026-03-22",
+      customFaqs: [
+        {
+          q: "What is the WebVoyager benchmark for AI browser agents?",
+          a: "WebVoyager is the standard benchmark for evaluating browser agents, introduced in the 2024 paper <a href='https://arxiv.org/abs/2401.13919' target='_blank' rel='noopener noreferrer'>WebVoyager: Building an End-to-End Web Agent with Large Multimodal Models</a>. It consists of 643 tasks across 15 websites including Google, Amazon, GitHub, Reddit, and Wikipedia. Tasks cover form filling, navigation, search, and shopping. GPT-4V evaluates each task by analyzing the final page state. Scores represent the percentage of tasks completed successfully.",
+        },
+        {
+          q: "Can WebVoyager scores be compared across different agents?",
+          a: "Not always. Three factors affect comparability: dataset size (full 643 tasks vs filtered subsets), evaluator (GPT-4V vs custom methods), and verification (third-party vs self-reported). Filtered subsets typically produce higher scores. Click any leaderboard row to see methodology. The most reliable comparisons use full dataset, GPT-4V evaluation, and third-party verification.",
+        },
+        {
+          q: "How is the WebVoyager score calculated?",
+          a: "Score = (tasks completed / total tasks) x 100. GPT-4V evaluates each task by analyzing the final page state to determine if the goal was achieved — correct page reached, information displayed, forms filled accurately, and flows completed.",
+        },
+        {
+          q: "What websites can AI browser agents navigate?",
+          a: "Agents can navigate any website. WebVoyager evaluates on 15 specific sites including Amazon, eBay, Google, Google Maps, Wikipedia, Reddit, Twitter/X, GitHub, ArXiv, and Booking.com. Real-world challenges include CAPTCHAs, bot detection, dynamic content, auth flows, and rate limiting. Production agents use infrastructure like <a href='https://steel.dev?utm_source=leaderboard&utm_medium=website&utm_content=faq-websites' target='_blank' rel='noopener noreferrer'>Steel</a> for <a href='https://steel.dev/blog/anti-bot-defense?utm_source=leaderboard&utm_medium=website&utm_content=faq-websites' target='_blank' rel='noopener noreferrer'>anti-bot measures</a> and proxy rotation.",
+        },
+        {
+          q: "Is a higher WebVoyager score always better for production use?",
+          a: "Not necessarily. WebVoyager measures task completion on a fixed website set under controlled conditions. Production depends on factors not captured by the benchmark — latency, cost per task, CAPTCHA handling, anti-bot resilience, and generalization to new websites. An agent optimized for benchmark scores may overfit. Use the leaderboard as a directional signal and test on your actual target websites.",
+        },
+        {
+          q: "Why is WebVoyager used instead of other benchmarks?",
+          a: "WebVoyager is the most widely adopted public benchmark for browser agents, enabling cross-agent comparison. Other benchmarks exist — Mind2Web (2000+ tasks), OSWorld (desktop interaction), WorkArena (enterprise apps) — but have seen less adoption. WebVoyager's real-world task design, consistent GPT-4V evaluation, and widespread usage make it the current standard.",
+        },
+      ],
     },
     results: benchmarkResults.webvoyager
 },
@@ -446,6 +473,10 @@ export function generateBenchmarkFaq(
     });
   }
 
+  if (meta.customFaqs?.length) {
+    items.push(...meta.customFaqs);
+  }
+
   return items;
 }
 
@@ -461,5 +492,25 @@ export const homeFaqs: BenchmarkFaqItem[] = [
   {
     q: "Do leaderboard scores belong to models or systems?",
     a: "Both exist, depending on page scope. Model pages emphasize base-model capability, while agent pages represent full systems (model + tooling + policy). Mixed pages include both and require extra caution.",
+  },
+  {
+    q: "Who maintains this leaderboard?",
+    a: "<a href='https://steel.dev?utm_source=leaderboard&utm_medium=website&utm_content=faq-what-is-steel' target='_blank' rel='noopener noreferrer'>Steel</a> maintains it as an open reference for the browser-agent ecosystem. Steel is browser infrastructure for AI agents — cloud browser sessions with anti-bot handling, proxy rotation, and session replay — used by teams building agents against the benchmarks tracked here. Contributions and corrections are welcome on <a href='https://github.com/steel-dev/leaderboard' target='_blank' rel='noopener noreferrer'>GitHub</a>.",
+  },
+  {
+    q: "How do AI browser agents work?",
+    a: "Browser agents combine LLMs with browser automation to complete web tasks. A vision model sees the webpage via screenshots or DOM. A reasoning model decides actions like clicking, typing, or scrolling. An execution layer drives the browser via Chrome DevTools Protocol or Playwright. A memory component tracks state across steps. Most agents run on cloud infrastructure like <a href='https://steel.dev?utm_source=leaderboard&utm_medium=website&utm_content=faq-how-agents-work' target='_blank' rel='noopener noreferrer'>Steel</a> for reliability and anti-bot handling.",
+  },
+  {
+    q: "How do I build my own AI browser agent?",
+    a: "Three layers are needed. Browser infrastructure: <a href='https://steel.dev?utm_source=leaderboard&utm_medium=website&utm_content=faq-build-agent' target='_blank' rel='noopener noreferrer'>Steel</a> provides managed sessions, proxies, anti-bot handling, and replay. AI layer: a vision-capable model like GPT-4o, Claude, or Gemini with prompting for action selection. Orchestration: frameworks like Browser Use or Skyvern handle clicking, typing, and state tracking. See the <a href='https://steel.dev/blog/production-agents?utm_source=leaderboard&utm_medium=website&utm_content=faq-build-agent' target='_blank' rel='noopener noreferrer'>production agents guide</a>. Once your agent has a publicly verifiable benchmark score, open a pull request on GitHub.",
+  },
+  {
+    q: "How often is the leaderboard updated?",
+    a: "The leaderboard updates as new benchmark results are published. New results appear weekly. If you know of a missing agent or score, pull requests and issues are welcome on <a href='https://github.com/steel-dev/leaderboard' target='_blank' rel='noopener noreferrer'>GitHub</a>.",
+  },
+  {
+    q: "How do I add my agent to the leaderboard?",
+    a: "Open a pull request on <a href='https://github.com/steel-dev/leaderboard' target='_blank' rel='noopener noreferrer'>GitHub</a> with your entry. You need a publicly verifiable benchmark score, a link to the source (paper or blog post), and a homepage or GitHub repo for your agent.",
   },
 ];
