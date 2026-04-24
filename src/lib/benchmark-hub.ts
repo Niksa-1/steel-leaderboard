@@ -1,37 +1,48 @@
-import fs from "fs";
-import path from "path";
+import {
+  agentBench,
+  browsecomp,
+  clawbench,
+  gaia,
+  mind2web,
+  osworld,
+  sweBenchVerified,
+  tauBench,
+  webarena,
+  webvoyager
+} from "../data";
 
-type RawBenchResults = Record<string, any[]>;
+type BenchmarkMap = {
+  agentBench: Record<string, BenchmarkResultRow[]>;
+  browsecomp: Record<string, BenchmarkResultRow[]>;
+  clawbench: Record<string, BenchmarkResultRow[]>;
+  gaia: Record<string, BenchmarkResultRow[]>;
+  mind2web: Record<string, BenchmarkResultRow[]>;
+  osworld: Record<string, BenchmarkResultRow[]>;
+  sweBenchVerified: Record<string, BenchmarkResultRow[]>;
+  tauBench: Record<string, BenchmarkResultRow[]>;
+  webarena: Record<string, BenchmarkResultRow[]>;
+  webvoyager: Record<string, BenchmarkResultRow[]>;
+};
 
-function loadBenchmarkResults(): RawBenchResults {
-  const dataDir = path.join(process.cwd(), "src", "data");
-  const results: RawBenchResults = {};
-  try {
-    const files = fs.readdirSync(dataDir);
-    for (const file of files) {
-      if (!file.endsWith(".json")) continue;
-      const fp = path.join(dataDir, file);
-      try {
-        const content = fs.readFileSync(fp, "utf8");
-        const parsed = JSON.parse(content);
-        if (Array.isArray(parsed)) {
-          const basename = path.basename(file, ".json");
-          results[basename] = parsed;
-        } else if (parsed && typeof parsed === "object") {
-          for (const [k, v] of Object.entries(parsed)) {
-            results[k] = v as any[];
-          }
-        }
-      } catch (err) {
-        console.warn(`Failed to read/parse ${fp}: ${err}`);
-      }
-    }
-  } catch (err) {
-    console.warn(`Failed to read data dir ${dataDir}: ${err}`);
-  }
-  return results;
+const benchmarkMap: BenchmarkMap = {
+  agentBench,
+  browsecomp,
+  clawbench,
+  gaia,
+  mind2web,
+  osworld,
+  sweBenchVerified,
+  tauBench,
+  webarena,
+  webvoyager,
+};
+
+type BenchmarkSlug = keyof typeof benchmarkMap;
+
+export function benchmarkResults(slug: BenchmarkSlug): BenchmarkResultRow[] {
+  const data = benchmarkMap[slug];
+  return data[slug];
 }
-const benchmarkResults = loadBenchmarkResults();
 
 export type BenchmarkCategory =
   | "browser_agents"
@@ -155,7 +166,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
         },
       ],
     },
-    results: benchmarkResults.webvoyager
+    results: benchmarkResults("webvoyager")
 },
   {
     meta: {
@@ -181,7 +192,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: true,
       lastUpdated: "2026-03-22",
     },
-    results: benchmarkResults.browsecomp
+    results: benchmarkResults("browsecomp")
   },
   {
     meta: {
@@ -210,7 +221,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: true,
       lastUpdated: "2026-03-22",
     },
-    results: benchmarkResults.webarena
+    results: benchmarkResults("webarena")
   },
   {
     meta: {
@@ -242,7 +253,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: true,
       lastUpdated: "2026-03-22",
     },
-    results: benchmarkResults["swe-bench-verified"]
+    results: benchmarkResults("sweBenchVerified")
   },
   {
     meta: {
@@ -271,7 +282,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: true,
       lastUpdated: "2026-04-16",
     },
-    results: benchmarkResults["osworld"],
+    results: benchmarkResults("osworld"),
   },
   {
     meta: {
@@ -299,7 +310,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: true,
       lastUpdated: "2026-04-16",
     },
-    results: benchmarkResults["gaia"],
+    results: benchmarkResults("gaia"),
   },
   {
     meta: {
@@ -329,7 +340,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: false,
       lastUpdated: "2026-04-16",
     },
-    results: benchmarkResults["clawbench"],
+    results: benchmarkResults("clawbench"),
   },
   {
     meta: {
@@ -358,7 +369,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: false,
       lastUpdated: "2026-04-16",
     },
-    results: benchmarkResults["mind2web"],
+    results: benchmarkResults("mind2web"),
   },
   {
     meta: {
@@ -387,7 +398,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: false,
       lastUpdated: "2026-04-16",
     },
-    results: benchmarkResults["tau-bench"],
+    results: benchmarkResults("tauBench"),
   },
   {
     meta: {
@@ -416,7 +427,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: false,
       lastUpdated: "2026-04-16",
     },
-    results: benchmarkResults["agent-bench"],
+    results: benchmarkResults("agentBench"),
   }
 ];
 
@@ -437,8 +448,11 @@ export function getFeaturedBenchmarkPages(): BenchmarkPageData[] {
 }
 
 export function getTopResult(rows: BenchmarkResultRow[]): BenchmarkResultRow | null {
-  if (rows.length === 0) return null;
-  return [...rows].sort((a, b) => a.rank - b.rank)[0];
+  if (!Array.isArray(rows) || rows.length === 0) return null;
+
+  return rows.reduce((best, curr) =>
+    curr.rank < best.rank ? curr : best
+  , rows[0]);
 }
 
 function formatDate(iso: string): string {
