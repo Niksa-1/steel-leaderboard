@@ -1,0 +1,164 @@
+{
+"webvoyager": [
+    {
+        "rank": 1,
+        "systemName": "Alumium",
+        "organization": "Alumium",
+        "scoreDisplay": "98.6%",
+        "scoreValue": 98.6,
+        "sourceUrl": "https://alumnium.ai/",
+        "notesShort": "Accessibility-based tree parsing with integrated visual reasoning.",
+        "isNew": true
+    },
+    {
+        "rank": 2,
+        "systemName": "Surfer 2",
+        "organization": "H Company",
+        "scoreDisplay": "97.1%",
+        "scoreValue": 97.1,
+        "sourceUrl": "https://hcompany.ai/surfer-2",
+        "notesShort": "System-level orchestration with submitter-defined setup details.",
+        "isNew": true
+    },
+    {
+        "rank": 3,
+        "systemName": "Magnitude",
+        "organization": "Magnitude",
+        "scoreDisplay": "93.9%",
+        "scoreValue": 93.9,
+        "sourceUrl": "https://magnitude.run/webvoyager",
+        "notesShort": "Open-source architecture utilizing a modular agentic stack."
+    },
+    {
+        "rank": 4,
+        "systemName": "AIME Browser-Use",
+        "organization": "Aime",
+        "scoreDisplay": "92.34%",
+        "scoreValue": 92.34,
+        "sourceUrl": "https://aime-browser-use.github.io/",
+        "notesShort": "Custom orchestration layer with specialized browser tooling.",
+        "isNew": true
+    },
+    {
+        "rank": 5,
+        "systemName": "Surfer-H + Holo1",
+        "organization": "H Company",
+        "scoreDisplay": "92.2%",
+        "scoreValue": 92.2,
+        "sourceUrl": "https://arxiv.org/pdf/2506.02865",
+        "notesShort": "Multi-modal action kernels integrated via H-Company research.",
+        "isNew": true
+    },
+    {
+        "rank": 6,
+        "systemName": "Browserable",
+        "organization": "Browserable",
+        "scoreDisplay": "90.4%",
+        "scoreValue": 90.4,
+        "sourceUrl": "https://www.browserable.ai/blog/web-voyager-benchmark",
+        "notesShort": "Fine-tuned browser control models within a commercial framework.",
+        "isNew": true
+    },
+    {
+        "rank": 7,
+        "systemName": "Browser Use",
+        "organization": "Browser Use",
+        "scoreDisplay": "89.1%",
+        "scoreValue": 89.1,
+        "sourceUrl": "https://browser-use.com/posts/sota-technical-report",
+        "notesShort": "Multi-step orchestration framework for open-source automation."
+    },
+    {
+        "rank": 8,
+        "systemName": "GLM-5V-Turbo",
+        "organization": "Z.ai",
+        "scoreDisplay": "88.5%",
+        "scoreValue": 88.5,
+        "sourceUrl": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+        "notesShort": "Multimodal vision model optimized for GUI automation and coding tasks.",
+        "isNew": true
+    },
+    {
+        "rank": 9,
+        "systemName": "Operator",
+        "organization": "OpenAI",
+        "scoreDisplay": "87%",
+        "scoreValue": 87,
+        "sourceUrl": "https://openai.com/index/introducing-operator/",
+        "notesShort": "Native browser integration using proprietary vision-control models."
+    },
+    {
+        "rank": 10,
+        "systemName": "Skyvern 2.0",
+        "organization": "Skyvern",
+        "scoreDisplay": "85.85%",
+        "scoreValue": 85.85,
+        "sourceUrl": "https://blog.skyvern.com/skyvern-2-0-state-of-the-art-web-navigation-with-85-8-on-webvoyager-eval/",
+        "notesShort": "DOM-level reasoning coupled with real-time error-correction."
+    },
+    {
+        "rank": 11,
+        "systemName": "Project Mariner",
+        "organization": "Google",
+        "scoreDisplay": "83.5%",
+        "scoreValue": 83.5,
+        "sourceUrl": "https://deepmind.google/technologies/project-mariner/",
+        "notesShort": "Gemini-powered reasoning with precise visual grounding."
+    },
+    {
+        "rank": 12,
+        "systemName": "Notte",
+        "organization": "Notte",
+        "scoreDisplay": "73.1%",
+        "scoreValue": 73.1,
+        "sourceUrl": "https://github.com/nottelabs/open-operator-evals",
+        "notesShort": "Standardized operator stack for open-source performance evaluation.",
+        "isNew": true
+    },
+    {
+        "rank": 13,
+        "systemName": "Agent-E",
+        "organization": "Emergence AI",
+        "scoreDisplay": "73.1%",
+        "scoreValue": 73.1,
+        "sourceUrl": "https://www.emergence.ai/blog/agent-e-sota",
+        "notesShort": "Hierarchical planning modules within a multi-agent framework."
+    },
+    {
+        "rank": 14,
+        "systemName": "WebSight",
+        "organization": "Academic Research",
+        "scoreDisplay": "68%",
+        "scoreValue": 68,
+        "sourceUrl": "https://arxiv.org/abs/2508.16987",
+        "notesShort": "Navigation system prioritizing visual-only perceptual inputs."
+    },
+    {
+        "rank": 15,
+        "systemName": "Runner H 0.1",
+        "organization": "H Company",
+        "scoreDisplay": "67%",
+        "scoreValue": 67,
+        "sourceUrl": "https://www.hcompany.ai/blog/a-research-update",
+        "notesShort": "Foundational agent architecture for general web interaction."
+    },
+    {
+        "rank": 16,
+        "systemName": "WebVoyager",
+        "organization": "Academic Research",
+        "scoreDisplay": "59.1%",
+        "scoreValue": 59.1,
+        "sourceUrl": "https://arxiv.org/abs/2401.13919",
+        "notesShort": "Baseline implementation using standard multimodal LLM control."
+    },
+    {
+        "rank": 17,
+        "systemName": "WILBUR",
+        "organization": "Academic Research",
+        "scoreDisplay": "53%",
+        "scoreValue": 53,
+        "sourceUrl": "https://arxiv.org/abs/2404.05902",
+        "notesShort": "Research implementation using black-box optimization techniques."
+    }
+  ]
+}

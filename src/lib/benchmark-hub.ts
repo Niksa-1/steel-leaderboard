@@ -1,4 +1,37 @@
-import benchmarkResults from "../data/benchmark-results.json";
+import fs from "fs";
+import path from "path";
+
+type RawBenchResults = Record<string, any[]>;
+
+function loadBenchmarkResults(): RawBenchResults {
+  const dataDir = path.join(process.cwd(), "src", "data");
+  const results: RawBenchResults = {};
+  try {
+    const files = fs.readdirSync(dataDir);
+    for (const file of files) {
+      if (!file.endsWith(".json")) continue;
+      const fp = path.join(dataDir, file);
+      try {
+        const content = fs.readFileSync(fp, "utf8");
+        const parsed = JSON.parse(content);
+        if (Array.isArray(parsed)) {
+          const basename = path.basename(file, ".json");
+          results[basename] = parsed;
+        } else if (parsed && typeof parsed === "object") {
+          for (const [k, v] of Object.entries(parsed)) {
+            results[k] = v as any[];
+          }
+        }
+      } catch (err) {
+        console.warn(`Failed to read/parse ${fp}: ${err}`);
+      }
+    }
+  } catch (err) {
+    console.warn(`Failed to read data dir ${dataDir}: ${err}`);
+  }
+  return results;
+}
+const benchmarkResults = loadBenchmarkResults();
 
 export type BenchmarkCategory =
   | "browser_agents"

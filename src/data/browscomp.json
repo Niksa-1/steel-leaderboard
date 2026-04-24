@@ -1,0 +1,128 @@
+{
+  "browsecomp": [
+    {
+        "rank": 1,
+        "systemName": "Mythos Preview",
+        "organization": "Anthropic",
+        "scoreDisplay": "86.9%",
+        "scoreValue": 86.9,
+        "sourceUrl": "https://www.anthropic.com/glasswing",
+        "notesShort": "Reported on Anthropic's Glasswing page.",
+        "isNew": true
+    },
+    {
+        "rank": 2,
+        "systemName": "Gemini 3.1 Pro",
+        "organization": "Google DeepMind",
+        "scoreDisplay": "85.9%",
+        "scoreValue": 85.9,
+        "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-1_pro_model_evaluation.pdf",
+        "notesShort": "Reported in Google DeepMind's Gemini 3.1 Pro model evaluation PDF.",
+        "isNew": true
+    },
+    {
+        "rank": 3,
+        "systemName": "Opus 4.6",
+        "organization": "Anthropic",
+        "scoreDisplay": "83.7%",
+        "scoreValue": 83.7,
+        "sourceUrl": "https://www.anthropic.com/glasswing",
+        "notesShort": "Reported on Anthropic's Glasswing page.",
+        "isNew": true
+    },
+    {
+        "rank": 4,
+        "systemName": "GPT-5.4",
+        "organization": "OpenAI",
+        "scoreDisplay": "82.7%",
+        "scoreValue": 82.7,
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-4/",
+        "notesShort": "Reported in OpenAI's GPT-5.4 announcement.",
+        "isNew": true
+    },
+    {
+        "rank": 5,
+        "systemName": "GLM-5.1",
+        "organization": "Z.ai",
+        "scoreDisplay": "79.3%",
+        "scoreValue": 79.3,
+        "sourceUrl": "https://z.ai/blog/glm-5.1",
+        "notesShort": "Reported on Z.ai's GLM-5.1 announcement.",
+        "isNew": true
+    },
+    {
+        "rank": 6,
+        "systemName": "GPT-5.3-Codex",
+        "organization": "OpenAI",
+        "scoreDisplay": "77.3%",
+        "scoreValue": 77.3,
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-4/",
+        "notesShort": "Reported in OpenAI's GPT-5.4 announcement.",
+        "isNew": true
+    },
+    {
+        "rank": 7,
+        "systemName": "GPT-5.2",
+        "organization": "OpenAI",
+        "scoreDisplay": "65.8%",
+        "scoreValue": 65.8,
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-4/",
+        "notesShort": "Reported in OpenAI's GPT-5.4 announcement.",
+        "isNew": true
+    },
+    {
+        "rank": 8,
+        "systemName": "Kimi K2 Thinking",
+        "organization": "Moonshot AI",
+        "scoreDisplay": "60.2%",
+        "scoreValue": 60.2,
+        "sourceUrl": "https://openai.com/index/browsecomp/",
+        "notesShort": "Score from public leaderboard context; row type may be model-centric."
+    },
+    {
+        "rank": 9,
+        "systemName": "Deep Research (o3)",
+        "organization": "OpenAI",
+        "scoreDisplay": "51.5%",
+        "scoreValue": 51.5,
+        "sourceUrl": "https://openai.com/index/browsecomp/",
+        "notesShort": "Reference result from OpenAI's BrowseComp paper; tool-augmented deep research agent."
+    },
+    {
+        "rank": 10,
+        "systemName": "Frontier baseline A",
+        "organization": "Public report",
+        "scoreDisplay": "51.0%",
+        "scoreValue": 51.0,
+        "sourceUrl": "https://openai.com/index/browsecomp/",
+        "notesShort": "Placeholder ranking row for template testing and FAQ generation."
+    },
+    {
+        "rank": 11,
+        "systemName": "Tool-augmented setup B",
+        "organization": "Community",
+        "scoreDisplay": "47.4%",
+        "scoreValue": 47.4,
+        "sourceUrl": "https://openai.com/index/browsecomp/",
+        "notesShort": "Illustrative mixed setup row; replace with verified source later."
+    },
+    {
+        "rank": 12,
+        "systemName": "WebSailor-72B",
+        "organization": "Academic",
+        "scoreDisplay": "12.0%",
+        "scoreValue": 12.0,
+        "sourceUrl": "https://arxiv.org/pdf/2507.02592",
+        "notesShort": "Third-party verified; open-source 72B model specialized for web navigation tasks."
+    },
+    {
+        "rank": 13,
+        "systemName": "GPT-4o + browsing",
+        "organization": "OpenAI",
+        "scoreDisplay": "1.9%",
+        "scoreValue": 1.9,
+        "sourceUrl": "https://openai.com/index/browsecomp/",
+        "notesShort": "Reference baseline from OpenAI's BrowseComp paper; illustrates benchmark difficulty."
+    }
+  ]
+}
