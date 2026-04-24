@@ -70,6 +70,16 @@
     },
     {
         "rank": 8,
+        "systemName": "GLM-5V-Turbo",
+        "organization": "Z.ai",
+        "scoreDisplay": "88.5%",
+        "scoreValue": 88.5,
+        "sourceUrl": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+        "notesShort": "Multimodal vision model optimized for GUI automation and coding tasks.",
+        "isNew": true
+    },
+    {
+        "rank": 9,
         "systemName": "Operator",
         "organization": "OpenAI",
         "scoreDisplay": "87%",
@@ -78,7 +88,7 @@
         "notesShort": "Native browser integration using proprietary vision-control models."
     },
     {
-        "rank": 9,
+        "rank": 10,
         "systemName": "Skyvern 2.0",
         "organization": "Skyvern",
         "scoreDisplay": "85.85%",
@@ -87,7 +97,7 @@
         "notesShort": "DOM-level reasoning coupled with real-time error-correction."
     },
     {
-        "rank": 10,
+        "rank": 11,
         "systemName": "Project Mariner",
         "organization": "Google",
         "scoreDisplay": "83.5%",
@@ -96,7 +106,7 @@
         "notesShort": "Gemini-powered reasoning with precise visual grounding."
     },
     {
-        "rank": 11,
+        "rank": 12,
         "systemName": "Notte",
         "organization": "Notte",
         "scoreDisplay": "73.1%",
@@ -106,7 +116,7 @@
         "isNew": true
     },
     {
-        "rank": 12,
+        "rank": 13,
         "systemName": "Agent-E",
         "organization": "Emergence AI",
         "scoreDisplay": "73.1%",
@@ -115,7 +125,7 @@
         "notesShort": "Hierarchical planning modules within a multi-agent framework."
     },
     {
-        "rank": 13,
+        "rank": 14,
         "systemName": "WebSight",
         "organization": "Academic Research",
         "scoreDisplay": "68%",
@@ -124,7 +134,7 @@
         "notesShort": "Navigation system prioritizing visual-only perceptual inputs."
     },
     {
-        "rank": 14,
+        "rank": 15,
         "systemName": "Runner H 0.1",
         "organization": "H Company",
         "scoreDisplay": "67%",
@@ -133,7 +143,7 @@
         "notesShort": "Foundational agent architecture for general web interaction."
     },
     {
-        "rank": 15,
+        "rank": 16,
         "systemName": "WebVoyager",
         "organization": "Academic Research",
         "scoreDisplay": "59.1%",
@@ -142,7 +152,7 @@
         "notesShort": "Baseline implementation using standard multimodal LLM control."
     },
     {
-        "rank": 16,
+        "rank": 17,
         "systemName": "WILBUR",
         "organization": "Academic Research",
         "scoreDisplay": "53%",
@@ -379,29 +389,47 @@
   ],
 
 
-  "swe-bench-verified": [
+"swe-bench-verified": [
     {
         "rank": 1,
-        "systemName": "Claude Opus 4.5",
+        "systemName": "Claude Mythos",
         "organization": "Anthropic",
-        "scoreDisplay": "80.9%",
-        "scoreValue": 80.9,
-        "sourceUrl": "https://www.swebench.com/",
-        "notesShort": "Self-reported by Anthropic on the official leaderboard; custom harness — third-party standardized scores differ.",
+        "scoreDisplay": "93.9%",
+        "scoreValue": 93.9,
+        "sourceUrl": "https://www.mindstudio.ai/blog/claude-mythos-benchmark-results-swe-bench-agentic-coding",
+        "notesShort": "Utilizes Mythos reasoning loops to reach near-human resolution on verified tasks.",
         "isNew": true
     },
     {
         "rank": 2,
-        "systemName": "Claude Opus 4.6",
+        "systemName": "Claude Opus 4.7",
         "organization": "Anthropic",
-        "scoreDisplay": "80.8%",
-        "scoreValue": 80.8,
-        "sourceUrl": "https://www.swebench.com/",
-        "notesShort": "Self-reported by Anthropic; near-parity with Opus 4.5.",
+        "scoreDisplay": "87.6%",
+        "scoreValue": 87.6,
+        "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-7",
+        "notesShort": "Anthropic's April 2026 frontier release; optimized for long-context codebase understanding.",
         "isNew": true
     },
     {
         "rank": 3,
+        "systemName": "Claude Opus 4.5",
+        "organization": "Anthropic",
+        "scoreDisplay": "80.9%",
+        "scoreValue": 80.9,
+        "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-5",
+        "notesShort": "Self-reported on the official leaderboard; high-throughput frontier model."
+    },
+    {
+        "rank": 4,
+        "systemName": "Claude Opus 4.6",
+        "organization": "Anthropic",
+        "scoreDisplay": "80.8%",
+        "scoreValue": 80.8,
+        "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-6",
+        "notesShort": "Self-reported by Anthropic; near-parity with Opus 4.5."
+    },
+    {
+        "rank": 5,
         "systemName": "Gemini 3.1 Pro",
         "organization": "Google DeepMind",
         "scoreDisplay": "80.6%",
@@ -411,71 +439,53 @@
         "isNew": true
     },
     {
-        "rank": 4,
+        "rank": 5,
+        "systemName": "DeepSeek-V4-Pro-Max",
+        "organization": "DeepSeek",
+        "scoreDisplay": "80.6%",
+        "scoreValue": 80.6,
+        "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/",
+        "notesShort": "Large-scale MoE model with specialized coding reinforcement learning.",
+        "isNew": true
+    },
+    {
+        "rank": 7,
         "systemName": "MiniMax M2.5",
         "organization": "MiniMax",
         "scoreDisplay": "80.2%",
         "scoreValue": 80.2,
-        "sourceUrl": "https://www.swebench.com/",
-        "notesShort": "Self-reported on official leaderboard; leading open-weight model on this benchmark.",
+        "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+        "notesShort": "Leading open-weight model on the official leaderboard."
+    },
+    {
+        "rank": 7,
+        "systemName": "Kimi K2.6",
+        "organization": "Moonshot AI",
+        "scoreDisplay": "80.2%",
+        "scoreValue": 80.2,
+        "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
+        "notesShort": "Advanced reasoning model with integrated terminal and editor tools.",
         "isNew": true
     },
     {
-        "rank": 5,
+        "rank": 9,
         "systemName": "GPT-5.2",
         "organization": "OpenAI",
         "scoreDisplay": "80.0%",
         "scoreValue": 80.0,
-        "sourceUrl": "https://www.swebench.com/",
-        "notesShort": "Self-reported by OpenAI on the official leaderboard.",
-        "isNew": true
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+        "notesShort": "Self-reported by OpenAI on the official leaderboard."
     },
     {
-        "rank": 6,
-        "systemName": "Sonar Foundation Agent",
-        "organization": "Sonar",
-        "scoreDisplay": "79.2%",
-        "scoreValue": 79.2,
-        "sourceUrl": "https://www.sonarsource.com/company/press-releases/sonar-claims-top-spot-on-swe-bench-leaderboard/",
-        "notesShort": "LLM-agnostic agent built on AutoCodeRover; peak results with Claude Opus 4.5."
-    },
-    {
-        "rank": 7,
+        "rank": 10,
         "systemName": "Claude Sonnet 4.6",
         "organization": "Anthropic",
         "scoreDisplay": "79.6%",
         "scoreValue": 79.6,
-        "sourceUrl": "https://www.swebench.com/",
-        "notesShort": "Self-reported; within 1.2 points of Opus 4.6 at ~1/5 the token cost."
-    },
-    {
-        "rank": 8,
-        "systemName": "Kimi K2.5",
-        "organization": "Moonshot AI",
-        "scoreDisplay": "76.8%",
-        "scoreValue": 76.8,
-        "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2.5",
-        "notesShort": "Self-reported in model card; internal harness with bash/editor tools, averaged over 5 runs."
-    },
-    {
-        "rank": 9,
-        "systemName": "Kimi K2 Thinking",
-        "organization": "Moonshot AI",
-        "scoreDisplay": "71.3%",
-        "scoreValue": 71.3,
-        "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
-        "notesShort": "Self-reported in model card; open-weights thinking model, internal harness averaged over 5 runs."
-    },
-    {
-        "rank": 10,
-        "systemName": "mini-SWE-agent v2",
-        "organization": "Academic (Princeton/Stanford)",
-        "scoreDisplay": ">74%",
-        "scoreValue": 74.0,
-        "sourceUrl": "https://github.com/SWE-agent/mini-swe-agent",
-        "notesShort": "Open-source 100-line agent; score is with latest frontier model backbone — varies by model used."
+        "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-4-6",
+        "notesShort": "Self-reported; high efficiency with frontier-class coding performance."
     }
-  ],
+],
 
 
   "osworld": [
@@ -525,7 +535,7 @@
         "organization": "Anthropic",
         "scoreDisplay": "72.5%",
         "scoreValue": 72.5,
-        "sourceUrl": "https://www.anthropic.com/",
+        "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-4-6",
         "notesShort": "Independently assessed; within 0.2 points of Opus 4.6 at significantly lower cost.",
         "isNew": true
     },
@@ -574,15 +584,6 @@
         "scoreValue": 32.6,
         "sourceUrl": "https://openai.com/index/computer-using-agent/",
         "notesShort": "Self-reported on 50-step OSWorld tasks at Operator launch."
-    },
-    {
-        "rank": 11,
-        "systemName": "Claude Computer Use (3.5 Sonnet)",
-        "organization": "Anthropic",
-        "scoreDisplay": "22.0%",
-        "scoreValue": 22.0,
-        "sourceUrl": "https://www.anthropic.com/news/3-5-models-and-computer-use",
-        "notesShort": "Original computer use launch result; baseline row showing benchmark progress since late 2024."
     }
 ],
 
@@ -687,78 +688,104 @@
 "tau-bench": [
     {
         "rank": 1,
+        "systemName": "Step-3.5-Flash",
+        "organization": "StepFun",
+        "scoreDisplay": "88.2%",
+        "scoreValue": 88.2,
+        "sourceUrl": "https://arxiv.org/abs/2602.10604",
+        "notesShort": "Direct technical report; Step-3.5 architecture optimized for high-consistency tool use.",
+        "isNew": true
+    },
+    {
+        "rank": 2,
+        "systemName": "GLM-4.7",
+        "organization": "Z.ai",
+        "scoreDisplay": "87.4%",
+        "scoreValue": 87.4,
+        "sourceUrl": "https://docs.z.ai/guides/llm/glm-4.7",
+        "notesShort": "Official Z.ai Developer docs; Introduces enhanced agentic policy compliance for enterprise retail/airline workflows.",
+        "isNew": true
+    },
+    {
+        "rank": 3,
+        "systemName": "MiMo-V2-Flash",
+        "organization": "Xiaomi",
+        "scoreDisplay": "80.3%",
+        "scoreValue": 80.3,
+        "sourceUrl": "https://arxiv.org/abs/2601.02780",
+        "notesShort": "Technical Report; MoE model with 309B total/15B active params and hybrid attention for long-horizon agent tasks.",
+        "isNew": true
+    },
+    {
+        "rank": 4,
+        "systemName": "GLM-4.7-Flash",
+        "organization": "Z.ai",
+        "scoreDisplay": "79.5%",
+        "scoreValue": 79.5,
+        "sourceUrl": "https://inference-docs.cerebras.ai/resources/glm-47-migration",
+        "notesShort": "Verified via Cerebras & Z.ai; SOTA performance for a lightweight flash-tier model in tool-use consistency.",
+        "isNew": true
+    },
+    {
+        "rank": 5,
+        "systemName": "MiniMax M2",
+        "organization": "MiniMax",
+        "scoreDisplay": "77.2%",
+        "scoreValue": 77.2,
+        "sourceUrl": "https://github.com/MiniMax-AI/MiniMax-M2",
+        "notesShort": "Official repository; M2 specifically models 'thinking' content to handle complex multi-turn toolchains.",
+        "isNew": false
+    },
+    {
+        "rank": 6,
         "systemName": "Claude Opus 4.5",
         "organization": "Anthropic",
         "scoreDisplay": "70.2%",
         "scoreValue": 70.2,
         "sourceUrl": "https://taubench.com",
-        "notesShort": "Evaluated by Sierra Research with High user simulator and GPT-5.2 judge.",
-        "isNew": true
+        "notesShort": "Sierra Research Evaluation; Measured using the 'High' user simulator and GPT-5.2 judge protocol."
     },
     {
-        "rank": 2,
+        "rank": 7,
         "systemName": "GPT-5.2",
         "organization": "OpenAI",
         "scoreDisplay": "69.9%",
         "scoreValue": 69.9,
         "sourceUrl": "https://taubench.com",
-        "notesShort": "Evaluated by Sierra Research with High user simulator and GPT-5.2 judge."
+        "notesShort": "Sierra Research Evaluation; Results based on the standardized Sierra simulation harness.",
+        "isNew": false
     },
     {
-        "rank": 3,
+        "rank": 8,
         "systemName": "Qwen3.5-397B-A17B",
         "organization": "Alibaba",
         "scoreDisplay": "68.4%",
         "scoreValue": 68.4,
-        "sourceUrl": "https://taubench.com",
-        "notesShort": "Evaluated by Sierra Research with Enabled user simulator and GPT-5.2 judge."
+        "sourceUrl": "https://qwen.ai/blog?id=qwen3.5",
+        "notesShort": "Official Qwen Blog; Native multimodal agent capabilities with sparse MoE architecture (17B active params).",
+        "isNew": false
     },
     {
-        "rank": 4,
+        "rank": 9,
         "systemName": "Gemini 3 Flash",
         "organization": "Google DeepMind",
         "scoreDisplay": "67.8%",
         "scoreValue": 67.8,
-        "sourceUrl": "https://taubench.com",
-        "notesShort": "Evaluated by Sierra Research with High user simulator and GPT-5.2 judge."
+        "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_model_evaluation.pdf",
+        "notesShort": "DeepMind Technical Report; Evaluation includes performance across retail, airline, and telecom domains.",
+        "isNew": false
     },
     {
-        "rank": 5,
+        "rank": 10,
         "systemName": "Gemini 3 Pro",
         "organization": "Google DeepMind",
         "scoreDisplay": "65.8%",
         "scoreValue": 65.8,
-        "sourceUrl": "https://taubench.com",
-        "notesShort": "Evaluated by Sierra Research with High user simulator and GPT-5.2 judge."
-    },
-    {
-        "rank": 6,
-        "systemName": "GLM-5",
-        "organization": "Z.AI",
-        "scoreDisplay": "63.2%",
-        "scoreValue": 63.2,
-        "sourceUrl": "https://taubench.com",
-        "notesShort": "Evaluated by Sierra Research with Enabled user simulator and GPT-5.2 judge."
-    },
-    {
-        "rank": 7,
-        "systemName": "Claude Sonnet 4.5",
-        "organization": "Anthropic",
-        "scoreDisplay": "62.9%",
-        "scoreValue": 62.9,
-        "sourceUrl": "https://taubench.com",
-        "notesShort": "Evaluated by Sierra Research with Enabled user simulator and GPT-5.2 judge."
-    },
-    {
-        "rank": 8,
-        "systemName": "GPT-5.2",
-        "organization": "OpenAI",
-        "scoreDisplay": "55.5%",
-        "scoreValue": 55.5,
-        "sourceUrl": "https://taubench.com",
-        "notesShort": "Evaluated by Sierra Research with None user simulator and GPT-5.2 judge. Lower score reflects no user simulation assistance."
+        "sourceUrl": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_model_evaluation.pdf",
+        "notesShort": "DeepMind Technical Report; Frontier reasoning performance for enterprise customer service simulations.",
+        "isNew": false
     }
-  ],
+],
 
 
 "agent-bench": [
@@ -868,13 +895,12 @@
         "scoreDisplay": "33.3%",
         "scoreValue": 33.3,
         "sourceUrl": "https://arxiv.org/abs/2604.08523",
-        "notesShort": "Native multi-modal reasoning with high success in Finance and Academic tasks.",
-        "isNew": true
+        "notesShort": "Native multi-modal reasoning with high success in Finance and Academic tasks."
     },
     {
         "rank": 2,
         "systemName": "GLM-5",
-        "organization": "Zhipu AI",
+        "organization": "Z.ai",
         "scoreDisplay": "24.2%",
         "scoreValue": 24.2,
         "sourceUrl": "https://arxiv.org/abs/2604.08523",
@@ -888,8 +914,7 @@
         "scoreDisplay": "19.0%",
         "scoreValue": 19.0,
         "sourceUrl": "https://arxiv.org/abs/2604.08523",
-        "notesShort": "Efficiency-optimized vision model with consistent performance in Travel categories.",
-        "isNew": true
+        "notesShort": "Efficiency-optimized vision model with consistent performance in Travel categories."
     },
     {
         "rank": 4,
@@ -898,8 +923,7 @@
         "scoreDisplay": "18.3%",
         "scoreValue": 18.3,
         "sourceUrl": "https://arxiv.org/abs/2604.08523",
-        "notesShort": "Balanced agentic loop demonstrating strong reasoning in Academic task groups.",
-        "isNew": true
+        "notesShort": "Balanced agentic loop demonstrating strong reasoning in Academic task groups."
     },
     {
         "rank": 5,
@@ -908,8 +932,7 @@
         "scoreDisplay": "6.5%",
         "scoreValue": 6.5,
         "sourceUrl": "https://arxiv.org/abs/2604.08523",
-        "notesShort": "Large-scale reasoning model baseline; highlights difficulty of live-web transactions.",
-        "isNew": true
+        "notesShort": "Large-scale reasoning model baseline; highlights difficulty of live-web transactions."
     },
     {
         "rank": 6,
@@ -982,8 +1005,7 @@
         "scoreDisplay": "78.7%",
         "scoreValue": 78.7,
         "sourceUrl": "https://yutori.com/blog/introducing-navigator",
-        "notesShort": "Human-evaluation score; also achieves 64.7% on auto-evaluation (WebJudge). 3.3x faster per-step than Claude 4.5.",
-        "isNew": false
+        "notesShort": "Human-evaluation score; also achieves 64.7% on auto-evaluation (WebJudge). 3.3x faster per-step than Claude 4.5."
     },
     {
         "rank": 6,
@@ -992,8 +1014,7 @@
         "scoreDisplay": "69.0%",
         "scoreValue": 69.0,
         "sourceUrl": "https://yutori.com/blog/introducing-navigator",
-        "notesShort": "Score reported by Yutori under identical evaluation settings; 57.3% on auto-evaluation (WebJudge).",
-        "isNew": false
+        "notesShort": "Score reported by Yutori under identical evaluation settings; 57.3% on auto-evaluation (WebJudge)."
     },
     {
         "rank": 7,
@@ -1002,8 +1023,7 @@
         "scoreDisplay": "61.3%",
         "scoreValue": 61.3,
         "sourceUrl": "https://arxiv.org/abs/2504.01382",
-        "notesShort": "Score from Online-Mind2Web paper; OpenAI did not publish judge, harness, or task-level results for independent verification.",
-        "isNew": false
+        "notesShort": "Score from Online-Mind2Web paper; OpenAI did not publish judge, harness, or task-level results for independent verification."
     },
     {
         "rank": 8,
@@ -1012,8 +1032,7 @@
         "scoreDisplay": "61.0%",
         "scoreValue": 61.0,
         "sourceUrl": "https://yutori.com/blog/introducing-navigator",
-        "notesShort": "Human-evaluation score reported by Yutori; 47.7% on auto-evaluation (WebJudge).",
-        "isNew": false
+        "notesShort": "Human-evaluation score reported by Yutori; 47.7% on auto-evaluation (WebJudge)."
     },
     {
         "rank": 9,
@@ -1022,8 +1041,7 @@
         "scoreDisplay": "55.0%",
         "scoreValue": 55.0,
         "sourceUrl": "https://yutori.com/blog/introducing-navigator",
-        "notesShort": "Human-evaluation score reported by Yutori under identical evaluation settings; 59.3% on auto-evaluation (WebJudge).",
-        "isNew": false
+        "notesShort": "Human-evaluation score reported by Yutori under identical evaluation settings; 59.3% on auto-evaluation (WebJudge)."
     },
     {
         "rank": 10,
@@ -1032,8 +1050,7 @@
         "scoreDisplay": "~30%",
         "scoreValue": 30.0,
         "sourceUrl": "https://hal.cs.princeton.edu/online_mind2web",
-        "notesShort": "Reference baseline from the HAL leaderboard tracker; illustrates the gap between frontier commercial systems and open models.",
-        "isNew": false
+        "notesShort": "Reference baseline from the HAL leaderboard tracker; illustrates the gap between frontier commercial systems and open models."
     }
   ]
 }
