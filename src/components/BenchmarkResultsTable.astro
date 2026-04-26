@@ -31,7 +31,11 @@ const { rows, scope, heading = "Leaderboard", slug = "" } = Astro.props;
         </tr>
       </thead>
       <tbody>
-        {rows.map((row) => (
+        {rows.map((row) => {
+          const badgeUrl = `https://leaderboard.steel.dev/og/${slug}/${row.rank}.png`;
+          const leaderboardUrl = `https://leaderboard.steel.dev/leaderboards/${slug}/`;
+          const tweetText = encodeURIComponent(`${row.systemName} by ${row.organization} ranks #${row.rank} on the ${heading} — ${leaderboardUrl}`);
+          return (
           <tr class="lb-row group align-middle">
             <td class="px-3 py-3 font-semibold">{row.rank}</td>
             <td class="px-3 py-3 text-[var(--color-text-strong)]">
@@ -48,27 +52,45 @@ const { rows, scope, heading = "Leaderboard", slug = "" } = Astro.props;
                 Source
               </a>
             </td>
-            <td class="px-3 py-3">
-              <button
-                class="copy-badge-btn muted cursor-pointer select-none text-xs whitespace-nowrap"
-                data-url={`https://leaderboard.steel.dev/og/${slug}/${row.rank}.png`}
-              >
-                Share
-              </button>
-            </td>
+            <td class="px-3 py-3 align-middle">
+            {slug && (
+              <div class="share-dropdown relative inline-block">
+                <button class="share-trigger muted cursor-pointer select-none text-xs whitespace-nowrap hover:text-[var(--color-text-strong)] transition-colors">
+                  Share ▾
+                </button>
+                <div class="share-menu absolute right-0 z-10 mt-1 hidden flex-col border border-[var(--color-border)] bg-[var(--color-bg)] text-xs shadow-lg">
+                  <button
+                    class="copy-badge-btn w-full px-4 py-2 text-left whitespace-nowrap hover:bg-[var(--color-surface)] transition-colors"
+                    data-url={badgeUrl}>
+                    Copy badge link
+                  </button>
+                  
+                  <a href={`https://X.com/intent/tweet?text=${tweetText}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block px-4 py-2 whitespace-nowrap hover:bg-[var(--color-surface)] transition-colors no-underline">
+                    Share on X
+                  </a>
+                  
+                   <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(leaderboardUrl)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block px-4 py-2 whitespace-nowrap hover:bg-[var(--color-surface)] transition-colors no-underline">
+                    Share on LinkedIn
+                  </a>
+                </div>
+              </div>
+            )}
+          </td>
           </tr>
-        ))}
+        )})}
       </tbody>
     </table>
   </div>
 </section>
 <div class="flex justify-end mb-2">
-  <button
-    class="copy-md-btn badge cursor-pointer select-none"
-    data-rows={JSON.stringify(rows)}
-    data-heading={heading}
-  >
-    copy as markdown
+  <button class="copy-md-btn badge cursor-pointer select-none" data-rows={JSON.stringify(rows)} data-heading={heading}>
+    Copy as markdown
   </button>
 </div>
 
@@ -104,12 +126,32 @@ const { rows, scope, heading = "Leaderboard", slug = "" } = Astro.props;
 </script>
 
 <script>
+  document.querySelectorAll<HTMLElement>(".share-dropdown").forEach((dropdown) => {
+    const trigger = dropdown.querySelector<HTMLButtonElement>(".share-trigger");
+    const menu = dropdown.querySelector<HTMLElement>(".share-menu");
+    if (!trigger || !menu) return;
+
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isHidden = menu.classList.contains("hidden");
+      document.querySelectorAll<HTMLElement>(".share-menu").forEach((m) => m.classList.add("hidden"));
+      if (isHidden) menu.classList.remove("hidden");
+    });
+  });
+
+  document.addEventListener("click", () => {
+    document.querySelectorAll<HTMLElement>(".share-menu").forEach((m) => m.classList.add("hidden"));
+  });
+
   document.querySelectorAll<HTMLButtonElement>(".copy-badge-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       navigator.clipboard.writeText(btn.dataset.url ?? "").then(() => {
         const orig = btn.textContent;
         btn.textContent = "copied!";
-        setTimeout(() => (btn.textContent = orig), 1800);
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.closest<HTMLElement>(".share-menu")?.classList.add("hidden");
+        }, 1800);
       });
     });
   });
