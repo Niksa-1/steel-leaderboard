@@ -138,7 +138,7 @@ const breadcrumbSchema = JSON.stringify({
   </section>
 
   <div class="mt-8 w-full">
-    <BenchmarkResultsTable rows={page.results} scope={page.meta.scope} heading={`${page.meta.name} results`} />
+    <BenchmarkResultsTable rows={page.results} scope={page.meta.scope} heading={page.meta.name} slug={page.meta.slug} />
   </div>
 
   {page.meta.relatedBenchmarks.length > 0 && (

@@ -86,8 +86,8 @@ const faqSchema = JSON.stringify({
     )}
   </section>
 
-  <div class="mt-8 w-full">
-    <BenchmarkResultsTable rows={webVoyager.results} scope={webVoyager.meta.scope} heading="WebVoyager leaderboard" />
+ <div class="mt-8 w-full">
+    <BenchmarkResultsTable rows={webVoyager.results} scope={webVoyager.meta.scope} heading="WebVoyager leaderboard" slug={webVoyager.meta.slug} />
   </div>
 
   <section class="mt-8 w-full">

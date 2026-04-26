@@ -6,9 +6,10 @@ interface Props {
   rows: BenchmarkResultRow[];
   scope: BenchmarkScope;
   heading?: string;
+  slug?: string;
 }
 
-const { rows, scope, heading = "Leaderboard" } = Astro.props;
+const { rows, scope, heading = "Leaderboard", slug = "" } = Astro.props;
 ---
 
 <section class="table-shell w-full">
@@ -26,11 +27,12 @@ const { rows, scope, heading = "Leaderboard" } = Astro.props;
           <th class="px-3 py-2 font-semibold">Organization</th>
           <th class="px-3 py-2 font-semibold">Notes</th>
           <th class="px-3 py-2 font-semibold">Source</th>
+          <th class="px-3 py-2 font-semibold text-center">Share</th>
         </tr>
       </thead>
       <tbody>
         {rows.map((row) => (
-          <tr class="lb-row align-top">
+          <tr class="lb-row group align-middle">
             <td class="px-3 py-3 font-semibold">{row.rank}</td>
             <td class="px-3 py-3 text-[var(--color-text-strong)]">
               <div class="flex flex-wrap items-center gap-2">
@@ -46,6 +48,14 @@ const { rows, scope, heading = "Leaderboard" } = Astro.props;
                 Source
               </a>
             </td>
+            <td class="px-3 py-3">
+              <button
+                class="copy-badge-btn muted cursor-pointer select-none text-xs whitespace-nowrap"
+                data-url={`https://leaderboard.steel.dev/og/${slug}/${row.rank}.png`}
+              >
+                Share
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>
@@ -53,12 +63,13 @@ const { rows, scope, heading = "Leaderboard" } = Astro.props;
   </div>
 </section>
 <div class="flex justify-end mb-2">
-    <button
-      class="copy-md-btn badge cursor-pointer select-none"
-      data-rows={JSON.stringify(rows)}
-      data-heading={heading}>
-      copy as markdown
-    </button>
+  <button
+    class="copy-md-btn badge cursor-pointer select-none"
+    data-rows={JSON.stringify(rows)}
+    data-heading={heading}
+  >
+    copy as markdown
+  </button>
 </div>
 
 <script>
@@ -87,6 +98,18 @@ const { rows, scope, heading = "Leaderboard" } = Astro.props;
         const original = btn.textContent;
         btn.textContent = "copied!";
         setTimeout(() => (btn.textContent = original), 1800);
+      });
+    });
+  });
+</script>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>(".copy-badge-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      navigator.clipboard.writeText(btn.dataset.url ?? "").then(() => {
+        const orig = btn.textContent;
+        btn.textContent = "copied!";
+        setTimeout(() => (btn.textContent = orig), 1800);
       });
     });
   });

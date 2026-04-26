@@ -86,7 +86,7 @@ export const GET: APIRoute = async ({ params }) => {
                   {
                       type: "div",
                       props: {
-                        style: { fontSize: "28px", color: ACCENT, letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 800 },
+                        style: { fontSize: "30px", color: ACCENT, letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 800 },
                         children: "STEEL.DEV®",
                       },
                   },
@@ -141,7 +141,7 @@ export const GET: APIRoute = async ({ params }) => {
             },
           })),
           { type: "div", props: { style: { marginTop: "auto", height: "1px", background: BORDER, marginBottom: "16px" } } },
-          { type: "div", props: { style: { fontSize: "16px", color: ACCENT, alignSelf: "flex-end", fontWeight: 700 }, children: `STEEL.DEV®` } }
+          { type: "div", props: { style: { fontSize: "12px", color: TEXT_MUTED, alignSelf: "center", fontWeight: 700 }, children: `leaderboard.steel.dev` } }
         ],
       },
     },
@@ -181,7 +181,7 @@ if (params.slug === "home") {
 
           { type: "div", props: { style: { width: "180px", height: "3px", background: ACCENT, borderRadius: "2px", marginBottom: "28px" } } },
 
-          { type: "div", props: { style: { fontSize: "72px", fontWeight: "700", color: TEXT_STRONG, lineHeight: "1.05", marginBottom: "8px" }, children: "AI Agent" } },
+          { type: "div", props: { style: { fontSize: "72px", fontWeight: "700", color: TEXT_STRONG, lineHeight: "1.05", marginBottom: "8px" }, children: "Browser Agent" } },
           { type: "div", props: { style: { fontSize: "72px", fontWeight: "700", color: TEXT_STRONG, lineHeight: "1.05", marginBottom: "28px" }, children: "Leaderboards" } },
 
           { type: "div", props: { style: { fontSize: "18px", color: TEXT_MUTED, marginBottom: "32px" }, children: "Track the best-performing AI agents across browser, computer use, coding & research." } },
