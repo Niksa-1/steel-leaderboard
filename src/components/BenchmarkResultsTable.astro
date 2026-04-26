@@ -123,9 +123,7 @@ const { rows, scope, heading = "Leaderboard", slug = "" } = Astro.props;
       });
     });
   });
-</script>
 
-<script>
   document.querySelectorAll<HTMLElement>(".share-dropdown").forEach((dropdown) => {
     const trigger = dropdown.querySelector<HTMLButtonElement>(".share-trigger");
     const menu = dropdown.querySelector<HTMLElement>(".share-menu");
@@ -139,20 +137,23 @@ const { rows, scope, heading = "Leaderboard", slug = "" } = Astro.props;
     });
   });
 
-  document.addEventListener("click", () => {
-    document.querySelectorAll<HTMLElement>(".share-menu").forEach((m) => m.classList.add("hidden"));
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    if (!target.closest(".share-dropdown")) {
+      document.querySelectorAll<HTMLElement>(".share-menu").forEach((m) => m.classList.add("hidden"));
+    }
   });
 
-  document.querySelectorAll<HTMLButtonElement>(".copy-badge-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      navigator.clipboard.writeText(btn.dataset.url ?? "").then(() => {
-        const orig = btn.textContent;
-        btn.textContent = "copied!";
-        setTimeout(() => {
-          btn.textContent = orig;
-          btn.closest<HTMLElement>(".share-menu")?.classList.add("hidden");
-        }, 1800);
-      });
+  document.addEventListener("click", (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>(".copy-badge-btn");
+    if (!btn || !btn.dataset.url) return;
+    e.stopPropagation();
+    navigator.clipboard.writeText(btn.dataset.url).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = "Copied!";
+      setTimeout(() => {
+        btn.textContent = orig;
+      }, 1800);
     });
   });
 </script>
