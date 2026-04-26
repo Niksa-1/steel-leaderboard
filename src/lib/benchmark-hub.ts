@@ -166,7 +166,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
         },
       ],
     },
-    results: benchmarkResults("webvoyager")
+    results: benchmarkResults("webvoyager")  ?? [],
 },
   {
     meta: {
@@ -192,7 +192,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: true,
       lastUpdated: "2026-03-22",
     },
-    results: benchmarkResults("browsecomp")
+    results: benchmarkResults("browsecomp") ?? [],
   },
   {
     meta: {
@@ -221,7 +221,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: true,
       lastUpdated: "2026-03-22",
     },
-    results: benchmarkResults("webarena")
+    results: benchmarkResults("webarena") ?? [],
   },
   {
     meta: {
@@ -253,7 +253,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: true,
       lastUpdated: "2026-03-22",
     },
-    results: benchmarkResults("sweBenchVerified")
+    results: benchmarkResults("sweBenchVerified") ?? [],
   },
   {
     meta: {
@@ -282,7 +282,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: true,
       lastUpdated: "2026-04-16",
     },
-    results: benchmarkResults("osworld"),
+    results: benchmarkResults("osworld") ?? [],
   },
   {
     meta: {
@@ -310,7 +310,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: true,
       lastUpdated: "2026-04-16",
     },
-    results: benchmarkResults("gaia"),
+    results: benchmarkResults("gaia") ?? [],
   },
   {
     meta: {
@@ -340,7 +340,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: false,
       lastUpdated: "2026-04-16",
     },
-    results: benchmarkResults("clawbench"),
+    results: benchmarkResults("clawbench") ?? [],
   },
   {
     meta: {
@@ -369,7 +369,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: false,
       lastUpdated: "2026-04-16",
     },
-    results: benchmarkResults("mind2web"),
+    results: benchmarkResults("mind2web") ?? [],
   },
   {
     meta: {
@@ -398,7 +398,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: false,
       lastUpdated: "2026-04-16",
     },
-    results: benchmarkResults("tauBench"),
+    results: benchmarkResults("tauBench") ?? [],
   },
   {
     meta: {
@@ -427,7 +427,7 @@ export const benchmarkPages: BenchmarkPageData[] = [
       featuredOnHome: false,
       lastUpdated: "2026-04-16",
     },
-    results: benchmarkResults("agentBench"),
+    results: benchmarkResults("agentBench") ?? [],
   }
 ];
 

@@ -1,5 +1,5 @@
 {
-"agent-bench": [
+"agentBench": [
     {
         "rank": 1,
         "systemName": "AgentRL w/ Qwen2.5-32B-Instruct",

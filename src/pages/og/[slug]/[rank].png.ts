@@ -74,7 +74,6 @@ export const GET: APIRoute = async ({ params }) => {
         color: TEXT_STRONG,
       },
       children: [
-        // TOP: BRANDING
         {
           type: "div",
           props: {
@@ -92,7 +91,6 @@ export const GET: APIRoute = async ({ params }) => {
           },
         },
 
-        // BENCHMARK NAME (Emphasized with an accent bar)
         {
           type: "div",
           props: {
@@ -110,7 +108,6 @@ export const GET: APIRoute = async ({ params }) => {
           },
         },
 
-        // AGENT NAME
         {
           type: "div",
           props: {
@@ -126,13 +123,11 @@ export const GET: APIRoute = async ({ params }) => {
           },
         },
 
-        // PERFORMANCE SECTION (Clean, no boxes)
         {
           type: "div",
           props: {
             style: { display: "flex", borderTop: `1px solid ${BORDER}`, paddingTop: "60px" },
             children: [
-              // Score (Primary Metric)
               {
                 type: "div",
                 props: {
@@ -149,7 +144,6 @@ export const GET: APIRoute = async ({ params }) => {
                   ],
                 },
               },
-              // Rank (Secondary Metric)
               {
                 type: "div",
                 props: {
@@ -170,10 +164,8 @@ export const GET: APIRoute = async ({ params }) => {
           },
         },
 
-        // FILLER
         { type: "div", props: { style: { flex: 1 } } },
 
-        // FOOTER
         {
           type: "div",
           props: {
