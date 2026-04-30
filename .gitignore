@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 # local data extraction scripts (top-level only, not src/scripts)
 /scripts/
+.vercel
