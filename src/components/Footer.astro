@@ -4,9 +4,6 @@ const currentTime = new Date().toLocaleDateString("en-US", {
   month: "short",
   day: "numeric",
 });
-
-const { execSync } = await import("child_process");
-const hash = execSync("git log -1 --pretty=format:%h src/lib/benchmark-hub.ts").toString().trim();
 ---
 
 <footer>
@@ -24,10 +21,10 @@ const hash = execSync("git log -1 --pretty=format:%h src/lib/benchmark-hub.ts").
     </div>
     <div>
       <a
-        href={`https://github.com/steel-dev/leaderboard/blob/main/src/lib/benchmark-hub.ts`}
+        href="https://github.com/steel-dev/leaderboard/tree/main/src/data"
         target="_blank"
         rel="noopener noreferrer"
-        class="no-underline text-[var(--color-text)] hover:text-[var(--color-accent)]">@{hash}</a
+        class="no-underline text-[var(--color-text)] hover:text-[var(--color-accent)]">Contribute</a
       >
     </div>
   </div>
