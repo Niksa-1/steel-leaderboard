@@ -2,13 +2,8 @@ name: Update README
 
 on:
   push:
-    paths:
-      - "src/data/**.json"
-      - "src/data/index.ts"
-      - "src/lib/benchmark-hub.ts"
-      - "src/scripts/update-readme.ts"
-      - ".github/workflows/update-readme.yml"
-  pull_request:
+    branches:
+      - main
     paths:
       - "src/data/**.json"
       - "src/data/index.ts"
