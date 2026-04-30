@@ -1,98 +1,161 @@
 {
-"mind2web": [
+  "mind2web": [
     {
-        "rank": 1,
-        "systemName": "Browser Use Cloud (bu-max)",
-        "organization": "Browser-Use",
-        "scoreDisplay": "97.0%",
-        "scoreValue": 97.0,
-        "sourceUrl": "https://browser-use.com/posts/online-mind2web-benchmark",
-        "notesShort": "Self-reported using a custom agentic judge built on Claude Agent SDK; OpenAI's score uses a different screenshot-based judge — not directly comparable.",
-        "isNew": true
+      "rank": 1,
+      "systemName": "Browser Use Cloud (bu-max)",
+      "organization": "Browser-Use",
+      "scoreDisplay": "97.0%",
+      "scoreValue": 97.0,
+      "sourceUrl": "https://browser-use.com/posts/online-mind2web-benchmark",
+      "notesShort": "Self-reported using a custom agentic judge built on Claude Agent SDK; OpenAI's score uses a different screenshot-based judge \u2014 not directly comparable.",
+      "isNew": true
     },
     {
-        "rank": 2,
-        "systemName": "ABP + Claude Opus 4.6",
-        "organization": "theredsix",
-        "scoreDisplay": "90.53%",
-        "scoreValue": 90.53,
-        "sourceUrl": "https://github.com/theredsix/abp-online-mind2web-results",
-        "notesShort": "Agent Browser Protocol with Claude Opus 4.6; all 300 task results published publicly. Previous SOTA was 78.7%.",
-        "isNew": true
+      "rank": 2,
+      "systemName": "ABP + Claude Opus 4.6",
+      "organization": "theredsix",
+      "scoreDisplay": "90.53%",
+      "scoreValue": 90.53,
+      "sourceUrl": "https://github.com/theredsix/abp-online-mind2web-results",
+      "notesShort": "Agent Browser Protocol with Claude Opus 4.6; all 300 task results published publicly. Previous SOTA was 78.7%.",
+      "isNew": true
     },
     {
-        "rank": 3,
-        "systemName": "TinyFish",
-        "organization": "TinyFish AI",
-        "scoreDisplay": "90.0%",
-        "scoreValue": 90.0,
-        "sourceUrl": "https://www.tinyfish.ai/blog/mind2web",
-        "notesShort": "All 300 task runs published publicly; outperformed Gemini by 21 points and OpenAI Operator by 29 points at time of submission.",
-        "isNew": true
+      "rank": 3,
+      "systemName": "TinyFish",
+      "organization": "TinyFish AI",
+      "scoreDisplay": "90.0%",
+      "scoreValue": 90.0,
+      "sourceUrl": "https://www.tinyfish.ai/blog/mind2web",
+      "notesShort": "All 300 task runs published publicly; outperformed Gemini by 21 points and OpenAI Operator by 29 points at time of submission.",
+      "isNew": true
     },
     {
-        "rank": 4,
-        "systemName": "UI-TARS-2",
-        "organization": "ByteDance / VLM-Research",
-        "scoreDisplay": "88.2%",
-        "scoreValue": 88.2,
-        "sourceUrl": "https://arxiv.org/abs/2509.02544",
-        "notesShort": "Native GUI agent trained with multi-turn RL; score from technical report, evaluated under standard Online-Mind2Web conditions.",
-        "isNew": true
+      "rank": 4,
+      "systemName": "UI-TARS-2",
+      "organization": "ByteDance / VLM-Research",
+      "scoreDisplay": "88.2%",
+      "scoreValue": 88.2,
+      "sourceUrl": "https://arxiv.org/abs/2509.02544",
+      "notesShort": "Native GUI agent trained with multi-turn RL; score from technical report, evaluated under standard Online-Mind2Web conditions.",
+      "isNew": true
     },
     {
-        "rank": 5,
-        "systemName": "Navigator",
-        "organization": "Yutori",
-        "scoreDisplay": "78.7%",
-        "scoreValue": 78.7,
-        "sourceUrl": "https://yutori.com/blog/introducing-navigator",
-        "notesShort": "Human-evaluation score; also achieves 64.7% on auto-evaluation (WebJudge). 3.3x faster per-step than Claude 4.5."
+      "rank": 5,
+      "systemName": "Navigator",
+      "organization": "Yutori",
+      "scoreDisplay": "78.7%",
+      "scoreValue": 78.7,
+      "sourceUrl": "https://yutori.com/blog/introducing-navigator",
+      "notesShort": "Human-evaluation score; also achieves 64.7% on auto-evaluation (WebJudge). 3.3x faster per-step than Claude 4.5."
     },
     {
-        "rank": 6,
-        "systemName": "Gemini 2.5 Computer Use",
-        "organization": "Google DeepMind",
-        "scoreDisplay": "69.0%",
-        "scoreValue": 69.0,
-        "sourceUrl": "https://yutori.com/blog/introducing-navigator",
-        "notesShort": "Score reported by Yutori under identical evaluation settings; 57.3% on auto-evaluation (WebJudge)."
+      "rank": 6,
+      "systemName": "Gemini 2.5 Computer Use",
+      "organization": "Google DeepMind",
+      "scoreDisplay": "69.0%",
+      "scoreValue": 69.0,
+      "sourceUrl": "https://yutori.com/blog/introducing-navigator",
+      "notesShort": "Score reported by Yutori under identical evaluation settings; 57.3% on auto-evaluation (WebJudge)."
     },
     {
-        "rank": 7,
-        "systemName": "OpenAI Operator",
-        "organization": "OpenAI",
-        "scoreDisplay": "61.3%",
-        "scoreValue": 61.3,
-        "sourceUrl": "https://arxiv.org/abs/2504.01382",
-        "notesShort": "Score from Online-Mind2Web paper; OpenAI did not publish judge, harness, or task-level results for independent verification."
+      "rank": 7,
+      "systemName": "OpenAI Operator",
+      "organization": "OpenAI",
+      "scoreDisplay": "61.3%",
+      "scoreValue": 61.3,
+      "sourceUrl": "https://arxiv.org/abs/2504.01382",
+      "notesShort": "Score from Online-Mind2Web paper; OpenAI did not publish judge, harness, or task-level results for independent verification."
     },
     {
-        "rank": 8,
-        "systemName": "Claude 4.0",
-        "organization": "Anthropic",
-        "scoreDisplay": "61.0%",
-        "scoreValue": 61.0,
-        "sourceUrl": "https://yutori.com/blog/introducing-navigator",
-        "notesShort": "Human-evaluation score reported by Yutori; 47.7% on auto-evaluation (WebJudge)."
+      "rank": 8,
+      "systemName": "Claude 4.0",
+      "organization": "Anthropic",
+      "scoreDisplay": "61.0%",
+      "scoreValue": 61.0,
+      "sourceUrl": "https://yutori.com/blog/introducing-navigator",
+      "notesShort": "Human-evaluation score reported by Yutori; 47.7% on auto-evaluation (WebJudge)."
     },
     {
-        "rank": 9,
-        "systemName": "Claude 4.5",
-        "organization": "Anthropic",
-        "scoreDisplay": "55.0%",
-        "scoreValue": 55.0,
-        "sourceUrl": "https://yutori.com/blog/introducing-navigator",
-        "notesShort": "Human-evaluation score reported by Yutori under identical evaluation settings; 59.3% on auto-evaluation (WebJudge)."
+      "rank": 9,
+      "systemName": "ACT-1-20250814",
+      "organization": "Enhans",
+      "scoreDisplay": "57.3%",
+      "scoreValue": 57.3,
+      "sourceUrl": "https://huggingface.co/spaces/osunlp/Online_Mind2Web_Leaderboard",
+      "notesShort": "Online-Mind2Web SR (Easy 81.9 / Med 54.5 / Hard 35.1); reported on osunlp HF leaderboard."
     },
     {
-        "rank": 10,
-        "systemName": "HAL Leaderboard baseline (best open)",
-        "organization": "Princeton / OSU",
-        "scoreDisplay": "~30%",
-        "scoreValue": 30.0,
-        "sourceUrl": "https://hal.cs.princeton.edu/online_mind2web",
-        "notesShort": "Reference baseline from the HAL leaderboard tracker; illustrates the gap between frontier commercial systems and open models."
+      "rank": 10,
+      "systemName": "Claude Computer Use 3.7 (w/o thinking)",
+      "organization": "Anthropic",
+      "scoreDisplay": "56.3%",
+      "scoreValue": 56.3,
+      "sourceUrl": "https://www.anthropic.com/news/claude-3-7-sonnet",
+      "notesShort": "Online-Mind2Web SR (Easy 90.4 / Med 49.0 / Hard 32.4); reported on osunlp HF leaderboard."
+    },
+    {
+      "rank": 11,
+      "systemName": "Claude 4.5",
+      "organization": "Anthropic",
+      "scoreDisplay": "55.0%",
+      "scoreValue": 55.0,
+      "sourceUrl": "https://yutori.com/blog/introducing-navigator",
+      "notesShort": "Human-evaluation score reported by Yutori under identical evaluation settings; 59.3% on auto-evaluation (WebJudge)."
+    },
+    {
+      "rank": 12,
+      "systemName": "ACT-1-20250703",
+      "organization": "Enhans",
+      "scoreDisplay": "45.7%",
+      "scoreValue": 45.7,
+      "sourceUrl": "https://huggingface.co/spaces/osunlp/Online_Mind2Web_Leaderboard",
+      "notesShort": "Online-Mind2Web SR (Easy 65.1 / Med 46.2 / Hard 23.0); reported on osunlp HF leaderboard."
+    },
+    {
+      "rank": 13,
+      "systemName": "SeeAct (gpt-4o)",
+      "organization": "OSU NLP",
+      "scoreDisplay": "30.7%",
+      "scoreValue": 30.7,
+      "sourceUrl": "https://osu-nlp-group.github.io/SeeAct/",
+      "notesShort": "Online-Mind2Web SR (Easy 60.2 / Med 25.2 / Hard 8.1); reported on osu-nlp-group.github.io."
+    },
+    {
+      "rank": 14,
+      "systemName": "Browser Use (gpt-4o)",
+      "organization": "Browser Use",
+      "scoreDisplay": "30.0%",
+      "scoreValue": 30.0,
+      "sourceUrl": "https://github.com/browser-use/browser-use",
+      "notesShort": "Online-Mind2Web SR (Easy 55.4 / Med 26.6 / Hard 8.1); reported on osunlp HF leaderboard."
+    },
+    {
+      "rank": 14,
+      "systemName": "HAL Leaderboard baseline (best open)",
+      "organization": "Princeton / OSU",
+      "scoreDisplay": "~30%",
+      "scoreValue": 30.0,
+      "sourceUrl": "https://hal.cs.princeton.edu/online_mind2web",
+      "notesShort": "Reference baseline from the HAL leaderboard tracker; illustrates the gap between frontier commercial systems and open models."
+    },
+    {
+      "rank": 16,
+      "systemName": "Claude Computer Use 3.5",
+      "organization": "Anthropic",
+      "scoreDisplay": "29.0%",
+      "scoreValue": 29.0,
+      "sourceUrl": "https://www.anthropic.com/news/3-5-models-and-computer-use",
+      "notesShort": "Online-Mind2Web SR (Easy 56.6 / Med 20.3 / Hard 14.9); reported on osunlp HF leaderboard."
+    },
+    {
+      "rank": 17,
+      "systemName": "Agent-E (gpt-4o)",
+      "organization": "Emergence AI",
+      "scoreDisplay": "28.0%",
+      "scoreValue": 28.0,
+      "sourceUrl": "https://github.com/EmergenceAI/Agent-E",
+      "notesShort": "Online-Mind2Web SR (Easy 49.4 / Med 26.6 / Hard 6.8); reported on osunlp HF leaderboard."
     }
   ]
 }

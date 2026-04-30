@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://steel.dev/leaderboard/schemas/benchmark.json",
+  "title": "Benchmark Leaderboard",
+  "description": "Schema for benchmark JSON files in src/data/. Each file is an object with a single key matching the benchmark name (e.g. agentBench, webvoyager, gaia) whose value is an array of leaderboard entries.",
+  "type": "object",
+  "minProperties": 1,
+  "maxProperties": 1,
+  "additionalProperties": {
+    "type": "array",
+    "items": { "$ref": "#/$defs/entry" }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": [
+        "rank",
+        "systemName",
+        "organization",
+        "scoreDisplay",
+        "scoreValue",
+        "sourceUrl",
+        "notesShort"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "rank": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "1-based leaderboard position; lower is better."
+        },
+        "systemName": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Display name of the system, model, or agent."
+        },
+        "organization": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Organization or team that produced the result (e.g. 'Anthropic', 'Academic Research')."
+        },
+        "scoreDisplay": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable score string as shown in the UI (e.g. '70.4%', '85.85%')."
+        },
+        "scoreValue": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Numeric score used for sorting and comparison. Unit is benchmark-specific (typically a percentage)."
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Citation URL: paper, blog post, or official leaderboard entry."
+        },
+        "notesShort": {
+          "type": "string",
+          "minLength": 1,
+          "description": "One-sentence note summarizing the submission, methodology, or context."
+        },
+        "isNew": {
+          "type": "boolean",
+          "description": "Optional flag marking a recently added entry; absent means false."
+        }
+      }
+    }
+  }
+}
