@@ -9,7 +9,7 @@ import {
   tauBench,
   webarena,
   webvoyager
-} from "../data";
+} from "../data/index.js";
 
 type BenchmarkMap = {
   agentBench: Record<string, BenchmarkResultRow[]>;

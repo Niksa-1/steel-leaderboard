@@ -23,5 +23,5 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# local data extraction scripts
-scripts/
+# local data extraction scripts (top-level only, not src/scripts)
+/scripts/
