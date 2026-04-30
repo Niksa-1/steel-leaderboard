@@ -2,11 +2,14 @@ name: Update README
 
 on:
   push:
+    branches:
+      - main
     paths:
-      - "src/lib/leaderboard.ts"
-  pull_request:
-    paths:
-      - "src/lib/leaderboard.ts"
+      - "src/data/**.json"
+      - "src/data/index.ts"
+      - "src/lib/benchmark-hub.ts"
+      - "src/scripts/update-readme.ts"
+      - ".github/workflows/update-readme.yml"
   workflow_dispatch:
 
 permissions:

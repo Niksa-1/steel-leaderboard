@@ -1,0 +1,107 @@
+{
+  "webarena": [
+    {
+      "rank": 1,
+      "systemName": "DeepSeek V3.2",
+      "organization": "DeepSeek",
+      "scoreDisplay": "74.3%",
+      "scoreValue": 74.3,
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1M801lEpBbKSNwP-vDBkC_pF7LdyGU1f_ufZb_NWNBZQ",
+      "notesShort": "Community tracker; third-party verified open-source submission.",
+      "isNew": true
+    },
+    {
+      "rank": 2,
+      "systemName": "OpAgent",
+      "organization": "CodeFuse AI",
+      "scoreDisplay": "71.6%",
+      "scoreValue": 71.6,
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1M801lEpBbKSNwP-vDBkC_pF7LdyGU1f_ufZb_NWNBZQ",
+      "notesShort": "Community tracker; third-party verified open-source submission.",
+      "isNew": true
+    },
+    {
+      "rank": 3,
+      "systemName": "ColorBrowserAgent",
+      "organization": "ColorBrowser",
+      "scoreDisplay": "71.2%",
+      "scoreValue": 71.2,
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1M801lEpBbKSNwP-vDBkC_pF7LdyGU1f_ufZb_NWNBZQ",
+      "notesShort": "Community tracker; third-party verified open-source submission.",
+      "isNew": true
+    },
+    {
+      "rank": 4,
+      "systemName": "Claude Code + GBOX",
+      "organization": "GBOX AI",
+      "scoreDisplay": "68.0%",
+      "scoreValue": 68.0,
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1M801lEpBbKSNwP-vDBkC_pF7LdyGU1f_ufZb_NWNBZQ",
+      "notesShort": "Community tracker; Claude Code as backbone with GBOX scaffolding."
+    },
+    {
+      "rank": 5,
+      "systemName": "DeepSky Agent",
+      "organization": "DeepSky",
+      "scoreDisplay": "66.9%",
+      "scoreValue": 66.9,
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1M801lEpBbKSNwP-vDBkC_pF7LdyGU1f_ufZb_NWNBZQ",
+      "notesShort": "Self-reported on community tracker."
+    },
+    {
+      "rank": 6,
+      "systemName": "Narada AI",
+      "organization": "Narada",
+      "scoreDisplay": "64.2%",
+      "scoreValue": 64.2,
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1M801lEpBbKSNwP-vDBkC_pF7LdyGU1f_ufZb_NWNBZQ",
+      "notesShort": "Self-reported on community tracker."
+    },
+    {
+      "rank": 7,
+      "systemName": "IBM CUGA",
+      "organization": "IBM",
+      "scoreDisplay": "61.7%",
+      "scoreValue": 61.7,
+      "sourceUrl": "https://arxiv.org/abs/2502.18438",
+      "notesShort": "Third-party verified; IBM's agentic system evaluated via research paper."
+    },
+    {
+      "rank": 8,
+      "systemName": "Kimi K2.5",
+      "organization": "Moonshot AI",
+      "scoreDisplay": "58.9%",
+      "scoreValue": 58.9,
+      "sourceUrl": "https://arxiv.org/html/2602.02276v1",
+      "notesShort": "Self-reported in Kimi K2.5 technical paper; GUI-based browsing without external tools.",
+      "isNew": true
+    },
+    {
+      "rank": 9,
+      "systemName": "OpenAI Operator",
+      "organization": "OpenAI",
+      "scoreDisplay": "58.1%",
+      "scoreValue": 58.1,
+      "sourceUrl": "https://openai.com/index/introducing-operator/",
+      "notesShort": "Self-reported by OpenAI at Operator launch."
+    },
+    {
+      "rank": 10,
+      "systemName": "Jace.AI (AWA-1.5)",
+      "organization": "Jace AI",
+      "scoreDisplay": "57.1%",
+      "scoreValue": 57.1,
+      "sourceUrl": "https://jace.ai/blog/awa-1-5-achieves-breakthrough-performance",
+      "notesShort": "Self-reported at product launch blog post."
+    },
+    {
+      "rank": 11,
+      "systemName": "WebOperator + GPT-4o",
+      "organization": "WebOperator",
+      "scoreDisplay": "54.6%",
+      "scoreValue": 54.6,
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1M801lEpBbKSNwP-vDBkC_pF7LdyGU1f_ufZb_NWNBZQ/edit",
+      "notesShort": "WebArena success rate; reported on the WebArena Google Sheet leaderboard."
+    }
+  ]
+}

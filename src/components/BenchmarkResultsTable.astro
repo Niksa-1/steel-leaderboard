@@ -1,0 +1,159 @@
+---
+import type { BenchmarkResultRow, BenchmarkScope } from "../lib/benchmark-hub";
+import { benchmarkScopeLabels } from "../lib/benchmark-hub";
+
+interface Props {
+  rows: BenchmarkResultRow[];
+  scope: BenchmarkScope;
+  heading?: string;
+  slug?: string;
+}
+
+const { rows, scope, heading = "Leaderboard", slug = "" } = Astro.props;
+---
+
+<section class="table-shell w-full">
+  <div class="lb-module-head flex items-center justify-between gap-3 px-4 py-3">
+    <h2 class="m-0 text-sm font-semibold text-[var(--color-text-strong)]">{heading}</h2>
+    <span class="badge">{benchmarkScopeLabels[scope]} scope</span>
+  </div>
+  <div class="overflow-x-auto">
+    <table class="min-w-[980px] w-full border-collapse text-sm">
+      <thead class="lb-header text-left text-xs uppercase tracking-[0.04em] text-[var(--color-text-muted)]">
+        <tr>
+          <th class="px-3 py-2 font-semibold">Rank</th>
+          <th class="px-3 py-2 font-semibold">System / Submission</th>
+          <th class="px-3 py-2 font-semibold">Score</th>
+          <th class="px-3 py-2 font-semibold">Organization</th>
+          <th class="px-3 py-2 font-semibold">Notes</th>
+          <th class="px-3 py-2 font-semibold">Source</th>
+          <th class="px-3 py-2 font-semibold text-center">Share</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => {
+          const badgeUrl = `https://leaderboard.steel.dev/og/${slug}/${row.rank}.png`;
+          const leaderboardUrl = `https://leaderboard.steel.dev/leaderboards/${slug}/`;
+          const tweetText = encodeURIComponent(`${row.systemName} by ${row.organization} ranks #${row.rank} on the ${heading} — ${leaderboardUrl}`);
+          return (
+          <tr class="lb-row group align-middle">
+            <td class="px-3 py-3 font-semibold">{row.rank}</td>
+            <td class="px-3 py-3 text-[var(--color-text-strong)]">
+              <div class="flex flex-wrap items-center gap-2">
+                <span>{row.systemName}</span>
+                {row.isNew && <span class="badge badge-accent">New</span>}
+              </div>
+            </td>
+            <td class="px-3 py-3 font-semibold">{row.scoreDisplay}</td>
+            <td class="px-3 py-3">{row.organization}</td>
+            <td class="px-3 py-3 muted">{row.notesShort}</td>
+            <td class="px-3 py-3">
+              <a href={row.sourceUrl} target="_blank" rel="noopener noreferrer nofollow">
+                Source
+              </a>
+            </td>
+            <td class="px-3 py-3 align-middle">
+            {slug && (
+              <div class="share-dropdown relative inline-block">
+                <button class="share-trigger muted cursor-pointer select-none text-xs whitespace-nowrap hover:text-[var(--color-text-strong)] transition-colors">
+                  Share ▾
+                </button>
+                <div class="share-menu absolute right-0 z-10 mt-1 hidden flex-col border border-[var(--color-border)] bg-[var(--color-bg)] text-xs shadow-lg">
+                  <button
+                    class="copy-badge-btn w-full px-4 py-2 text-left whitespace-nowrap hover:bg-[var(--color-surface)] transition-colors"
+                    data-url={badgeUrl}>
+                    Copy badge link
+                  </button>
+                  
+                  <a href={`https://X.com/intent/tweet?text=${tweetText}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block px-4 py-2 whitespace-nowrap hover:bg-[var(--color-surface)] transition-colors no-underline">
+                    Share on X
+                  </a>
+                  
+                   <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(leaderboardUrl)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block px-4 py-2 whitespace-nowrap hover:bg-[var(--color-surface)] transition-colors no-underline">
+                    Share on LinkedIn
+                  </a>
+                </div>
+              </div>
+            )}
+          </td>
+          </tr>
+        )})}
+      </tbody>
+    </table>
+  </div>
+</section>
+<div class="flex justify-end mb-2">
+  <button class="copy-md-btn badge cursor-pointer select-none" data-rows={JSON.stringify(rows)} data-heading={heading}>
+    Copy as markdown
+  </button>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>(".copy-md-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const rows = JSON.parse(btn.dataset.rows ?? "[]") as {
+        rank: number;
+        systemName: string;
+        organization: string;
+        scoreDisplay: string;
+        notesShort: string;
+        sourceUrl: string;
+      }[];
+      const heading = btn.dataset.heading ?? "Leaderboard";
+
+      const header = `| Rank | System | Organization | Score | Notes |`;
+      const divider = `| --- | --- | --- | --- | --- |`;
+      const rowLines = rows.map(
+        (r) =>
+          `| #${r.rank} | [${r.systemName}](${r.sourceUrl}) | ${r.organization} | ${r.scoreDisplay} | ${r.notesShort} |`
+      );
+
+      const md = [`## ${heading}`, ``, header, divider, ...rowLines].join("\n");
+
+      navigator.clipboard.writeText(md).then(() => {
+        const original = btn.textContent;
+        btn.textContent = "copied!";
+        setTimeout(() => (btn.textContent = original), 1800);
+      });
+    });
+  });
+
+  document.querySelectorAll<HTMLElement>(".share-dropdown").forEach((dropdown) => {
+    const trigger = dropdown.querySelector<HTMLButtonElement>(".share-trigger");
+    const menu = dropdown.querySelector<HTMLElement>(".share-menu");
+    if (!trigger || !menu) return;
+
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isHidden = menu.classList.contains("hidden");
+      document.querySelectorAll<HTMLElement>(".share-menu").forEach((m) => m.classList.add("hidden"));
+      if (isHidden) menu.classList.remove("hidden");
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    if (!target.closest(".share-dropdown")) {
+      document.querySelectorAll<HTMLElement>(".share-menu").forEach((m) => m.classList.add("hidden"));
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>(".copy-badge-btn");
+    if (!btn || !btn.dataset.url) return;
+    e.stopPropagation();
+    navigator.clipboard.writeText(btn.dataset.url).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = "Copied!";
+      setTimeout(() => {
+        btn.textContent = orig;
+      }, 1800);
+    });
+  });
+</script>

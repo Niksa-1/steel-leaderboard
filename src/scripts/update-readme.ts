@@ -1,53 +1,88 @@
 import fs from "fs";
 import path from "path";
-import { leaderboardEntries } from "../lib/leaderboard.js";
+import {
+  benchmarkCategoryLabels,
+  benchmarkScopeLabels,
+  getAllBenchmarkPages,
+  type BenchmarkPageData,
+  type BenchmarkResultRow,
+} from "../lib/benchmark-hub.js";
 
 const README_PATH = path.join(process.cwd(), "README.md");
+const SITE_URL = "https://leaderboard.steel.dev";
+const TOP_N = 5;
+const START_MARKER = "<!-- LEADERBOARDS:START -->";
+const END_MARKER = "<!-- LEADERBOARDS:END -->";
 
-function generateTableMarkdown(entries: typeof leaderboardEntries): string {
-  const header = `| Rank | Agent           | Organization   | WebVoyager Score | Source                                                                                            | Open Source | New | SOTA |
-| ---- | --------------- | -------------- | ---------------- | ------------------------------------------------------------------------------------------------- | ----------- | --- | ---- |`;
-
-  const highestScore = Math.max(
-    ...entries.map((entry) => parseFloat(entry.webVoyager.score.replace("%", "")))
-  );
-
-  const rows = entries
-    .map((entry, index) => {
-      const rank = index + 1;
-      const openSource = entry.github ? "Yes" : "No";
-      const isNew = entry.isNew ? "Yes" : "";
-      const isSota =
-        parseFloat(entry.webVoyager.score.replace("%", "")) === highestScore ? "Yes" : "";
-
-      return `| ${rank} | ${entry.agent.padEnd(14)} | ${entry.organization.padEnd(13)} | ${entry.webVoyager.score.padEnd(15)} | [Source](${entry.webVoyager.source}) | ${openSource.padEnd(11)} | ${isNew.padEnd(3)} | ${isSota.padEnd(4)} |`;
-    })
-    .join("\n");
-
-  return `${header}\n${rows}`;
+function escapePipes(value: string): string {
+  return value.replace(/\|/g, "\\|");
 }
 
-function updateReadme() {
-  const readmeContent = fs.readFileSync(README_PATH, "utf-8");
-  const tableMarkdown = generateTableMarkdown(leaderboardEntries);
+function renderRow(row: BenchmarkResultRow): string {
+  const system = row.isNew ? `${row.systemName} **(new)**` : row.systemName;
+  const score = `[${row.scoreDisplay}](${row.sourceUrl})`;
+  return `| ${row.rank} | ${escapePipes(system)} | ${escapePipes(row.organization)} | ${escapePipes(score)} |`;
+}
 
-  const tableStart = readmeContent.indexOf("| Rank | Agent");
-  const notesStart = readmeContent.indexOf("**Notes:**", tableStart);
+function renderBenchmark(page: BenchmarkPageData): string {
+  const { meta, results } = page;
+  const url = `${SITE_URL}/leaderboards/${meta.slug}`;
+  const top = results.slice(0, TOP_N);
+  const remaining = Math.max(results.length - top.length, 0);
 
-  if (tableStart === -1 || notesStart === -1) {
-    console.error("Could not find table section in README");
+  const header = `### [${meta.name}](${url})
+
+${benchmarkCategoryLabels[meta.category]} · ${benchmarkScopeLabels[meta.scope]} scope · ${results.length} ${results.length === 1 ? "entry" : "entries"} tracked`;
+
+  if (top.length === 0) {
+    return `${header}\n\nNo tracked results yet — [contribute one](${SITE_URL}/leaderboards/${meta.slug}).`;
+  }
+
+  const table = [
+    "| Rank | System | Organization | Score |",
+    "| ---: | ------ | ------------ | ----- |",
+    ...top.map(renderRow),
+  ].join("\n");
+
+  const more =
+    remaining > 0
+      ? `\n\n[See all ${results.length} entries →](${url})`
+      : `\n\n[View on the leaderboard →](${url})`;
+
+  return `${header}\n\n${table}${more}`;
+}
+
+function renderAllBenchmarks(): string {
+  const pages = getAllBenchmarkPages();
+  const featured = pages.filter((p) => p.meta.featuredOnHome);
+  const others = pages.filter((p) => !p.meta.featuredOnHome);
+  const ordered = [...featured, ...others];
+
+  return ordered.map(renderBenchmark).join("\n\n---\n\n");
+}
+
+function updateReadme(): void {
+  const readme = fs.readFileSync(README_PATH, "utf-8");
+  const start = readme.indexOf(START_MARKER);
+  const end = readme.indexOf(END_MARKER);
+
+  if (start === -1 || end === -1 || end < start) {
+    throw new Error(
+      `Could not locate ${START_MARKER} / ${END_MARKER} markers in README.md`
+    );
+  }
+
+  const before = readme.slice(0, start + START_MARKER.length);
+  const after = readme.slice(end);
+  const body = renderAllBenchmarks();
+  const next = `${before}\n\n${body}\n\n${after}`;
+
+  if (next === readme) {
+    console.log("README.md already up to date.");
     return;
   }
 
-  const updatedContent =
-    readmeContent.slice(0, tableStart) + tableMarkdown + "\n\n" + readmeContent.slice(notesStart);
-
-  const cleanedContent = updatedContent
-    .replace(/\|\|.*\n/g, "")
-    .replace(/\n{3,}/g, "\n\n")
-    .replace(/\*\*Notes:\*\*\*\*Notes:\*\*/g, "**Notes:**");
-
-  fs.writeFileSync(README_PATH, cleanedContent);
+  fs.writeFileSync(README_PATH, next);
   console.log("README.md has been updated successfully!");
 }
 

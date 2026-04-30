@@ -1,0 +1,144 @@
+{
+  "sweBenchVerified": [
+    {
+      "rank": 1,
+      "systemName": "Claude Mythos",
+      "organization": "Anthropic",
+      "scoreDisplay": "93.9%",
+      "scoreValue": 93.9,
+      "sourceUrl": "https://www.mindstudio.ai/blog/claude-mythos-benchmark-results-swe-bench-agentic-coding",
+      "notesShort": "Utilizes Mythos reasoning loops to reach near-human resolution on verified tasks.",
+      "isNew": true
+    },
+    {
+      "rank": 2,
+      "systemName": "Claude Opus 4.7",
+      "organization": "Anthropic",
+      "scoreDisplay": "87.6%",
+      "scoreValue": 87.6,
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-7",
+      "notesShort": "Anthropic's April 2026 frontier release; optimized for long-context codebase understanding.",
+      "isNew": true
+    },
+    {
+      "rank": 3,
+      "systemName": "Claude Opus 4.5",
+      "organization": "Anthropic",
+      "scoreDisplay": "80.9%",
+      "scoreValue": 80.9,
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-5",
+      "notesShort": "Self-reported on the official leaderboard; high-throughput frontier model."
+    },
+    {
+      "rank": 4,
+      "systemName": "Claude Opus 4.6",
+      "organization": "Anthropic",
+      "scoreDisplay": "80.8%",
+      "scoreValue": 80.8,
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-6",
+      "notesShort": "Self-reported by Anthropic; near-parity with Opus 4.5."
+    },
+    {
+      "rank": 5,
+      "systemName": "DeepSeek-V4-Pro-Max",
+      "organization": "DeepSeek",
+      "scoreDisplay": "80.6%",
+      "scoreValue": 80.6,
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/",
+      "notesShort": "Large-scale MoE model with specialized coding reinforcement learning.",
+      "isNew": true
+    },
+    {
+      "rank": 5,
+      "systemName": "Gemini 3.1 Pro",
+      "organization": "Google DeepMind",
+      "scoreDisplay": "80.6%",
+      "scoreValue": 80.6,
+      "sourceUrl": "https://deepmind.google/models/gemini/pro/",
+      "notesShort": "Self-reported by Google DeepMind at Gemini 3.1 Pro launch, February 2026.",
+      "isNew": true
+    },
+    {
+      "rank": 7,
+      "systemName": "Kimi K2.6",
+      "organization": "Moonshot AI",
+      "scoreDisplay": "80.2%",
+      "scoreValue": 80.2,
+      "sourceUrl": "https://www.kimi.com/blog/kimi-k2-6",
+      "notesShort": "Advanced reasoning model with integrated terminal and editor tools.",
+      "isNew": true
+    },
+    {
+      "rank": 7,
+      "systemName": "MiniMax M2.5",
+      "organization": "MiniMax",
+      "scoreDisplay": "80.2%",
+      "scoreValue": 80.2,
+      "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+      "notesShort": "Leading open-weight model on the official leaderboard."
+    },
+    {
+      "rank": 9,
+      "systemName": "GPT-5.2",
+      "organization": "OpenAI",
+      "scoreDisplay": "80.0%",
+      "scoreValue": 80.0,
+      "sourceUrl": "https://openai.com/index/introducing-gpt-5-2/",
+      "notesShort": "Self-reported by OpenAI on the official leaderboard."
+    },
+    {
+      "rank": 10,
+      "systemName": "Claude Sonnet 4.6",
+      "organization": "Anthropic",
+      "scoreDisplay": "79.6%",
+      "scoreValue": 79.6,
+      "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "notesShort": "Self-reported; high efficiency with frontier-class coding performance."
+    },
+    {
+      "rank": 11,
+      "systemName": "DeepSeek-V4-Flash-Max",
+      "organization": "DeepSeek",
+      "scoreDisplay": "79.0%",
+      "scoreValue": 79.0,
+      "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash",
+      "notesShort": "SWE-bench Verified resolve rate; reported on huggingface.co."
+    },
+    {
+      "rank": 12,
+      "systemName": "Qwen3.6 Plus",
+      "organization": "Alibaba Cloud / Qwen Team",
+      "scoreDisplay": "78.8%",
+      "scoreValue": 78.8,
+      "sourceUrl": "https://qwen.ai/blog?id=qwen3.6",
+      "notesShort": "SWE-bench Verified resolve rate; reported on qwen.ai."
+    },
+    {
+      "rank": 13,
+      "systemName": "Gemini 3 Flash",
+      "organization": "Google DeepMind",
+      "scoreDisplay": "78.0%",
+      "scoreValue": 78.0,
+      "sourceUrl": "https://blog.google/products/gemini/gemini-3-flash/",
+      "notesShort": "SWE-bench Verified resolve rate; reported on blog.google."
+    },
+    {
+      "rank": 13,
+      "systemName": "MiMo-V2-Pro",
+      "organization": "Xiaomi",
+      "scoreDisplay": "78.0%",
+      "scoreValue": 78.0,
+      "sourceUrl": "https://mimo.xiaomi.com/mimo-v2-pro",
+      "notesShort": "SWE-bench Verified resolve rate; reported on mimo.xiaomi.com."
+    },
+    {
+      "rank": 15,
+      "systemName": "GLM-5",
+      "organization": "Zhipu AI",
+      "scoreDisplay": "77.8%",
+      "scoreValue": 77.8,
+      "sourceUrl": "https://docs.z.ai/guides/llm/glm-5",
+      "notesShort": "SWE-bench Verified resolve rate; reported on docs.z.ai."
+    }
+  ]
+}
